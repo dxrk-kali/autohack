@@ -1,0 +1,208 @@
+#!/bin/bash
+
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+#END COLORS
+
+nmapipscan(){
+echo '[+] Please enter your target IP address ---> '
+read targip
+echo '[+] What ports would you like to scan on --->'
+echo '[*] Starting Port ---> '
+read startport
+echo '[*] End Port ---> '
+read endport
+#nmap -T4 -p$startport-$endport $targip
+gnome-terminal --command="bash -c 'nmap -T4 -p$startport-$endport $targip; $SHELL'"
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1
+}
+
+niktowebscan(){
+printf  "${YLLW}[+] Enter the URL you would like to scan ---> "
+read url
+#nikto -h $url
+gnome-terminal --command="bash -c 'nikto -h $url; $SHELL'"
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1
+}
+
+netscan(){
+echo 'Enter your subnet ---> '
+read subnet
+echo 'Example | 192.168.0.0/24'
+#nmap -sn $subnet
+gnome-terminal --command="bash -c 'nmap -sn $subnet; $SHELL'"
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1
+}
+
+sniffer(){
+echo '[+] Enter target BSSID ---> '
+read bssid
+echo '[+] Enter the channel # ---> '
+read channel
+echo '[+] Choose a name to save your .cap file ---> '
+read filename
+#airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon
+gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon; $SHELL'"
+#fixed
+printf "${GREEN}
+------------------------------------
+[✓] 	FINISHED SNIFFING	[✓] |
+------------------------------------"
+
+sleep 1
+#working
+}
+
+wifiscan(){
+#airmon-ng check kill
+#airmon-ng start wlan0
+echo '[*] Wlan0 is now in Monitor Mode -----> wlan0mon'
+gnome-terminal --command="bash -c 'airmon-ng check kill; airmon-ng start wlan0 ;airodump-ng --band abg wlan0mon; $SHELL'" #airodump-ng --band abg wlan0mon
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1
+}
+
+managedmode(){
+echo [+] Wlan0 will now be returned to managed mode!
+#airmon-ng stop wlan0mon
+#service NetworkManager restart
+gnome-terminal --command="bash -c 'airmon-ng stop wlan0mon; service NetworkManager restart;$SHELL'"
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] WIFI CARD ----> MANAGED MODE [✓] |
+-------------------------------------"
+
+sleep 1
+}
+
+usrmsg(){
+echo ''
+echo ''
+echo "Thanks for downloading and running my script. It took me a little bit of time to learn bash scripting to put this together. But i wanted to share it with the community! I know it's simple but i hope it helps save some time. I plan to take suggestions on other functions i can implement and release, leave a comment or send me a message with your ideas!
+	
+	*P.S. | Feel free to simply edit the source code to customize your own unique patch.*
+	 
+							Enjoy!"
+echo ''
+echo ''
+}
+
+#ADD UPDATER FOR NEW PATCHES
+
+
+cli(){
+
+
+printf "${RED}
+ █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
+██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗	██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
+███████║██║   ██║   ██║   ██║   ██║	███████║███████║██║     █████╔╝    
+██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
+██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
+╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝   
+${NC}"
+printf "${DG}
+________________________________
+Created by: dxrk                |
+Version 1.00                    |
+--------------------------------
+${NC}"
+#OPTIONS START
+printf "${YLLW}
+--------------------------------------------------------------------------------
+Scanning/Enumeration			|	Network/WiFi			|	
+--------------------------------------------------------------------------------
+1) Website Vulnerability Scan (Nikto)	|	4) Live Host Scan (NMAP)	|				
+2) IP Specific Port Scan (NMAP)		|	5) Packet Sniffer (Aircrack)	|			
+3) In-Range WiFi Scanner (Aircrack)	|	6) WiFi Card --> Managed Mode	|
+--------------------------------------------------------------------------------
+Other										|
+--------------------------------------------------------------------------------
+7) Message to Users								|
+--------------------------------------------------------------------------------
+${DG}
+Hacking made simple.
+
+̿̿ ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+
+${NC}"
+#OPTIONS END
+printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+read choice
+if [ $choice == 1 ]  
+then
+	niktowebscan
+
+elif [ $choice == 2 ] 
+then
+	nmapipscan
+	
+
+elif [ $choice == 3 ] 
+then
+	wifiscan	
+
+elif [ $choice == 4 ] 
+then
+	sniffer
+
+elif [ $choice == 5 ] 
+then
+	netscan
+
+elif [ $choice == 6 ] 
+then
+	managedmode
+elif [ $choice == 7 ]
+then
+	usrmsg
+
+else
+	echo You did not select a valid option.
+	cli
+fi
+cli
+}
+
+
+cli
+
+
+
+
+exit
+
+ 
