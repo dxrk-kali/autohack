@@ -156,19 +156,19 @@ ${NC}"
 #OPTIONS START
 printf "${YLLW}
 ------------------------------------------------------------------------------------------------
-Website Tools				 |	WiFi/Network Tools				|		
+Website Tools				 |	WiFi/Network Tools				.		
 ------------------------------------------------------------------------------------------------
-1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)						|
-					 |  3) Live Host Scan (NMAP)						|
-					 |  4) IP Address Port Scan (NMAP)					|
-					 |  5) Packet Sniffer (Aircrack)					|
-					 |  6) WiFi Card --> Managed Mode (Network Services)			|
+1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)				.
+					 |  3) Live Host Scan (NMAP)				.
+					 |  4) IP Address Port Scan (NMAP)			.
+					 |  5) Packet Sniffer (Aircrack)			.
+					 |  6) WiFi Card --> Managed Mode (Network Services)	.
 
 ------------------------------------------------------------------------------------------------
-Other												|
+Other												.
 ------------------------------------------------------------------------------------------------
-7) Check for Updates 										|
-8) Message to Users										|
+7) Check for Updates 										.
+8) Message to Users										.
 ------------------------------------------------------------------------------------------------
 ${DG}
 Hacking made simple.
@@ -205,7 +205,7 @@ then
 	managedmode
 elif [ $choice == 7 ]
 then
-	echo coming soon!
+	updater
 elif [ $choice == 8 ]
 then
 	usrmsg
