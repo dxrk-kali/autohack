@@ -150,7 +150,7 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.20                      |
+Patch 1.21                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
@@ -216,8 +216,8 @@ else
 fi
 cli
 }
-
-
+get-apt install -y xdotool
+xdotool key Alt_L+F10
 cli
 
 
