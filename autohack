@@ -120,7 +120,20 @@ echo ''
 echo ''
 }
 
-#ADD UPDATER FOR NEW PATCHES
+updater(){
+echo ''
+echo ' --------------------------------------------------------------------------------------------------------------------------------------'
+echo '| Use the new window if you would like to srart using the new patch. Your old window is now considered an out-of-date patch of Autohack|'
+echo ' --------------------------------------------------------------------------------------------------------------------------------------'
+echo ''
+printf "${GREEN}
+------------------------------------
+[✓] 		UPDATED		[✓] |
+------------------------------------"
+gnome-terminal --command="git pull;exit;$SHELL'"
+gnome-terminal --command="./autohack;$SHELL'"
+sleep 5
+}
 
 
 cli(){
@@ -137,7 +150,7 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.10                      |
+Patch 1.20                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
