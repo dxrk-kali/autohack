@@ -137,22 +137,26 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Version 1.01                    |
+Version 1.10                    |
 --------------------------------
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
---------------------------------------------------------------------------------
-Scanning/Enumeration			|	Network/WiFi			|	
---------------------------------------------------------------------------------
-1) Website Vulnerability Scan (Nikto)	|	4) Live Host Scan (NMAP)	|				
-2) IP Specific Port Scan (NMAP)		|	5) Packet Sniffer (Aircrack)	|			
-3) In-Range WiFi Scanner (Aircrack)	|	6) WiFi Card --> Managed Mode	|
---------------------------------------------------------------------------------
-Other										|
---------------------------------------------------------------------------------
-7) Message to Users								|
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+Website Tools				 |	WiFi/Network Tools				|		
+------------------------------------------------------------------------------------------------
+1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)				|
+					 |  3) Live Host Scan (NMAP)				|
+					 |  4) IP Address Port Scan (NMAP)			|
+					 |  5) Packet Sniffer (Aircrack)			|
+					 |  6) WiFi Card --> Managed Mode (Network Services)	|
+
+------------------------------------------------------------------------------------------------
+Other												|
+------------------------------------------------------------------------------------------------
+7) Check for Updates 										|
+8) Message to Users										|
+------------------------------------------------------------------------------------------------
 ${DG}
 Hacking made simple.
 
@@ -168,25 +172,28 @@ then
 
 elif [ $choice == 2 ] 
 then
-	nmapipscan
+	wifiscan
 	
 
 elif [ $choice == 3 ] 
 then
-	wifiscan	
+	netscan	
 
 elif [ $choice == 4 ] 
 then
-	sniffer
+	nmapipscan
 
 elif [ $choice == 5 ] 
 then
-	netscan
+	sniffer
 
 elif [ $choice == 6 ] 
 then
 	managedmode
 elif [ $choice == 7 ]
+then
+	echo coming soon!
+elif [ $choice == 8 ]
 then
 	usrmsg
 
