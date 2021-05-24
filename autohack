@@ -158,11 +158,11 @@ printf "${YLLW}
 ------------------------------------------------------------------------------------------------
 Website Tools				 |	WiFi/Network Tools				|		
 ------------------------------------------------------------------------------------------------
-1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)				|
-					 |  3) Live Host Scan (NMAP)				|
-					 |  4) IP Address Port Scan (NMAP)			|
-					 |  5) Packet Sniffer (Aircrack)			|
-					 |  6) WiFi Card --> Managed Mode (Network Services)	|
+1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)						|
+					 |  3) Live Host Scan (NMAP)						|
+					 |  4) IP Address Port Scan (NMAP)					|
+					 |  5) Packet Sniffer (Aircrack)					|
+					 |  6) WiFi Card --> Managed Mode (Network Services)			|
 
 ------------------------------------------------------------------------------------------------
 Other												|
@@ -216,8 +216,8 @@ else
 fi
 cli
 }
-get-apt install -y xdotool
-xdotool key Alt_L+F10
+#get-apt install -y xdotool
+#xdotool key Alt_L+F10
 cli
 
 
