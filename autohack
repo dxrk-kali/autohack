@@ -121,18 +121,31 @@ echo ''
 }
 
 updater(){
+
+printf "${GREEN}
+------------------------------------
+[✓]      ... UPDATING ...	[✓] |
+------------------------------------"
 echo ''
-echo ' --------------------------------------------------------------------------------------------------------------------------------------'
-echo '| Use the new window if you would like to srart using the new patch. Your old window is now considered an out-of-date patch of Autohack|'
-echo ' --------------------------------------------------------------------------------------------------------------------------------------'
-echo ''
+git pull
 printf "${GREEN}
 ------------------------------------
 [✓] 		UPDATED		[✓] |
 ------------------------------------"
-gnome-terminal --command="git pull;exit;$SHELL'"
-gnome-terminal --command="./autohack;$SHELL'"
-sleep 5
+printf "${GREEN}
+------------------------------------
+[✓] 	You are now up-to-date	[✓] |
+------------------------------------"
+printf "${GREEN}
+------------------------------------
+[✓] 	     Hack on.		[✓] |
+------------------------------------"
+printf "${YLLW}
+-----------------------------------------------------------
+[!] Exit and restart AutoHack to use the newest patch! [!] |
+-----------------------------------------------------------"
+sleep 100
+
 }
 
 
@@ -150,26 +163,26 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.21                      |
+Patch 1.30                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
-------------------------------------------------------------------------------------------------
-Website Tools				 |	WiFi/Network Tools				|		
-------------------------------------------------------------------------------------------------
-1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)				|
-					 |  3) Live Host Scan (NMAP)				|
-					 |  4) IP Address Port Scan (NMAP)			|
-					 |  5) Packet Sniffer (Aircrack)			|
-					 |  6) WiFi Card --> Managed Mode (Network Services)	|
+-------------------------------------------------------------------------------
+	Website Tools			 |	WiFi/Network Tools 	       |						
+-------------------------------------------------------------------------------
+1) Website Vulnerability Scanner (Nikto) |  2) WiFi Scanner (Aircrack)	       |		
+					 |  3) Live Host Scan (NMAP)	       |		
+					 |  4) IP Address Port Scan (NMAP)     |		
+					 |  5) Packet Sniffer (Aircrack)       |		
+					 |  6) WiFi Card --> Managed Mode      |	
 
-------------------------------------------------------------------------------------------------
-Other												|
-------------------------------------------------------------------------------------------------
-7) Check for Updates 										|
-8) Message to Users										|
-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Other									       |		
+-------------------------------------------------------------------------------
+7) Check for Updates 							       |		
+8) Message to Users							       |		
+-------------------------------------------------------------------------------
 ${DG}
 Hacking made simple.
 
@@ -209,6 +222,9 @@ then
 elif [ $choice == 8 ]
 then
 	usrmsg
+elif [ $choice == 'exit' ]
+then
+	exit
 
 else
 	echo You did not select a valid option.
@@ -216,9 +232,9 @@ else
 fi
 cli
 }
-apt-get install -y xdotool
-xdotool key Alt_L+F10
+
 cli
+
 
 
 exit
