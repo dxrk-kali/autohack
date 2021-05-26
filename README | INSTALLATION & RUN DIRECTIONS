@@ -4,7 +4,7 @@ To install and use autohack:
 
 1. Clone the https link, your terminal should look like - git clone https://github.com/dxrk-kali/autohack.git
 
-2. Make sure you are inside of the new directory installed called: autohack | cd autohack
+2. Make sure you are inside of the new directory installed called 'autohack' and then: cd autohack
 
 3. Make autohack a .exe: chmod +x autohack
 
