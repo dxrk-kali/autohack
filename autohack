@@ -149,7 +149,7 @@ sleep 100
 }
 
 arpscan(){
-gnome-terminal --command="bash -c 'arp-scan -l';$SHELL'"
+gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'"
 
 }
 
@@ -168,7 +168,7 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.42                      |
+Patch 1.43                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
@@ -206,7 +206,7 @@ elif [ $choice == 2 ]
 then
 	wifiscan
 
-elif [ $choice == 2a ] 
+elif [ $choice == '2a' ] 
 then
 	arpscan
 
