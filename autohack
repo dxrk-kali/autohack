@@ -177,7 +177,7 @@ printf "${YLLW}
 	Website Tools			 |	WiFi/Network Tools 	       |						
 -------------------------------------------------------------------------------
 1) Website Vulnerability Scanner (Nikto) |  2) Network Scan (Aircrack)         |
-					 |  2a) Networkk Scan (Arp)	       |
+					 |  2a) Network Scan (Arp)	       |
 					 |  3) Live Host Scan (NMAP)	       |		
 					 |  4) IP Address Port Scan (NMAP)     |		
 					 |  5) Packet Sniffer (Aircrack)       |		
