@@ -18,7 +18,7 @@ read startport
 echo '[*] End Port ---> '
 read endport
 #nmap -T4 -p$startport-$endport $targip
-gnome-terminal --command="bash -c 'nmap -T4 -p$startport-$endport $targip; $SHELL'"
+gnome-terminal --command="bash -c 'nmap -sC -sV -A -p$startport-$endport $targip; $SHELL'"
 #working
 #fixed
 printf "${GREEN}
@@ -168,32 +168,36 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.44                      |
+Patch 1.55                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
-	Website Tools			 |	WiFi/Network Tools 	       |						
+				Scanning/Enumeration 	                       |						
 -------------------------------------------------------------------------------
-1) Website Vulnerability Scanner (Nikto) |  2) Network Scan (Aircrack)         |
-					 |  2a) Network Scan (Arp)	       |
-					 |  3) Live Host Scan (NMAP)	       |		
-					 |  4) IP Address Port Scan (NMAP)     |		
-					 |  5) Packet Sniffer (Aircrack)       |		
-					 |  6) WiFi Card --> Managed Mode      |	
-									       |
+1) Website Vulnerability Scanner (Nikto) |                                     |
+2) Port Scanner (NMAP)                   |                                     |
+					 |                                     |
+					 | 				       |		
+	   MORE SOON!			 |  	      MORE SOON!	       |		
+					 |         			       |		
+					 |     				       |	
+					 |				       |
 -------------------------------------------------------------------------------
-Other									       |		
+	WiFi				 |	Other			       |		
 -------------------------------------------------------------------------------
-7) Check for Updates 							       |		
-8) Message to Users							       |		
+3)  Wifi Scan (Aircrack)	         |  6) Update AutoHack	               | 							      		
+3a) WiFi Scan (Arp)		         |  7) Message to users		       |
+4)  Packet Sniffer (Aircrack)            |                                     |
+5)  WiFi Card --> Managed Mode           |                                     |
+					 |				       |
 -------------------------------------------------------------------------------
 ${DG}
 Hacking made simple.
 
  ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
-
+ 
 ${NC}"
 #OPTIONS END
 printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
@@ -204,30 +208,30 @@ then
 
 elif [ $choice == 2 ] 
 then
-	wifiscan
-
-elif [ $choice == '2a' ] 
-then
-	arpscan
+	nmapipscan
 
 elif [ $choice == 3 ] 
 then
-	netscan	
+	netscan
+
+elif [ $choice == '3a' ] 
+then
+	arpscan	
 
 elif [ $choice == 4 ] 
 then
-	nmapipscan
+	sniffer
 
 elif [ $choice == 5 ] 
 then
-	sniffer
+	managedmode
 
 elif [ $choice == 6 ] 
 then
-	managedmode
+	updater
 elif [ $choice == 7 ]
 then
-	updater
+	usrmsg
 elif [ $choice == 8 ]
 then
 	usrmsg
