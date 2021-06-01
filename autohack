@@ -168,7 +168,7 @@ ${NC}"
 printf "${DG}
 ________________________________
 Created by: dxrk                |
-Patch 1.55                      |
+Patch 1.56                      |
 --------------------------------
 ${NC}"
 #OPTIONS START
@@ -187,8 +187,8 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 	WiFi				 |	Other			       |		
 -------------------------------------------------------------------------------
-3)  Wifi Scan (Aircrack)	         |  6) Update AutoHack	               | 							      		
-3a) WiFi Scan (Arp)		         |  7) Message to users		       |
+3)  Scan for WiFi Networks (Aircrack)	 |  6) Update AutoHack	               | 							      		
+3a) Scan for WiFi Networks #2 (Arp)      |  7) Message to users		       |
 4)  Packet Sniffer (Aircrack)            |                                     |
 5)  WiFi Card --> Managed Mode           |                                     |
 					 |				       |
