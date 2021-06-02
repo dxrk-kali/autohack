@@ -150,6 +150,7 @@ printf "${GREEN}
 echo ''
 echo ''
 git reset --hard
+git commit -m ' '
 git pull
 printf "${GREEN}
 ------------------------------------
