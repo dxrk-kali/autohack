@@ -149,7 +149,7 @@ printf "${GREEN}
 ------------------------------------"
 echo ''
 echo ''
-git add autohack
+git reset --hard
 git pull
 printf "${GREEN}
 ------------------------------------
