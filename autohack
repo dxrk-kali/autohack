@@ -248,7 +248,7 @@ printf "${YLLW}
 3)  Scan for WiFi (Aircrack)	         |  6) Check for Updates	       | 					
 3a) Scan for WiFi #2 (Arp)               |  7) Message to users		       |
 4)  Packet Sniffer (Aircrack)            |  8) Credits                         |
-5)  WiFi Card --> Managed Mode           |                                     |
+5)  WiFi Card --> Managed Mode           |  Type 'exit' to quit the program    |
 					 |				       |
 -------------------------------------------------------------------------------
 ${DG}
