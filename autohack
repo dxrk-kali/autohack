@@ -141,7 +141,7 @@ echo ''
 updater(){
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 1.99             [+] |
+[+]      Patch 2.00             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -149,9 +149,12 @@ printf "${GREEN}
 ------------------------------------"
 echo ''
 echo ''
-git reset --hard
-git commit -m ' '
-git pull
+git reset --hard 2&>1 >/dev/null
+git commit -m ' ' 2&>1 >/dev/null
+git pull 2&>1 >/dev/null
+sleep 1
+
+
 printf "${GREEN}
 ------------------------------------
 [✓] 		UPDATED		[✓] |
@@ -168,12 +171,15 @@ printf "${YLLW}
 ------------------------------------
 [!] ...Restarting Autohack...   [!] |
 ------------------------------------"
-sleep 3
+
+gnome-terminal -- ./autohack
+sleep 1
+exit
 
 }
 
 arpscan(){
-gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'"
+gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'" 2&>1 >/dev/null
 
 }
 
@@ -212,7 +218,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v1.99  
+   				    v2.00  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -277,6 +283,10 @@ then
 elif [ $choice == 6 ] 
 then
 	updater
+	gnome-terminal -- ./autohack
+	
+	
+
 elif [ $choice == 7 ]
 then
 	usrmsg
