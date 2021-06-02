@@ -148,8 +148,9 @@ printf "${GREEN}
 [✓]      ... UPDATING ...	[✓] |
 ------------------------------------"
 echo ''
-echo 'test'
-git fetch
+echo ''
+git add
+git pull
 printf "${GREEN}
 ------------------------------------
 [✓] 		UPDATED		[✓] |
