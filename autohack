@@ -165,9 +165,9 @@ printf "${GREEN}
 ------------------------------------"
 printf "${YLLW}
 ------------------------------------
-[!] Exit and restart AutoHack.  [!] |
+[!] ...Restarting Autohack...   [!] |
 ------------------------------------"
-sleep 5
+sleep 3
 
 }
 
