@@ -182,7 +182,7 @@ printf "${YLLW}
 ------------------------------------"
 
 #gnome-terminal -- ./autohack
-sleep 3
+sleep 5
 
 
 }
