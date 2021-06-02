@@ -18,7 +18,7 @@ read startport
 echo '[*] End Port ---> '
 read endport
 #nmap -T4 -p$startport-$endport $targip
-gnome-terminal --command="bash -c 'nmap -sC -sV -A -p$startport-$endport $targip; $SHELL'"
+gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv -p$startport-$endport $targip; $SHELL'"
 #working
 #fixed
 printf "${GREEN}
@@ -27,6 +27,24 @@ printf "${GREEN}
 -------------------------------------"
 
 sleep 1
+}
+nmapudpscan(){
+echo '[+] Please enter your target IP address ---> '
+read targip
+echo '[+] What ports would you like to scan on --->'
+echo '[*] Starting Port ---> '
+read startport
+echo '[*] End Port ---> '
+read endport
+#nmap -T4 -p$startport-$endport $targip
+gnome-terminal --command="bash -c 'nmap -T4 -sU -vv -p$startport-$endport $targip; $SHELL'"
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
 }
 
 niktowebscan(){
@@ -123,7 +141,7 @@ echo ''
 updater(){
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 1.70             [+] |
+[+]      Patch 1.96             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -197,9 +215,9 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 				Scanning/Enumeration 	                       |						
 -------------------------------------------------------------------------------
-1) Website Vulnerability Scanner (Nikto) |                                     |
-2) Port Scanner (NMAP)                   |                                     |
-					 |                                     |
+1)  Nikto Web Scan (Nikto)               |                                     |
+2)  NMAP Scan (NMAP)                     |                                     |
+2a) NMAP UDP Scan (NMAP)	         |                                     |
 					 | 				       |		
 	   MORE SOON!			 |  	      MORE SOON!	       |		
 					 |         			       |		
@@ -208,8 +226,8 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 	WiFi				 |	Other			       |		
 -------------------------------------------------------------------------------
-3)  Scan for WiFi Networks (Aircrack)	 |  6) Check for Updates	       | 					
-3a) Scan for WiFi Networks #2 (Arp)      |  7) Message to users		       |
+3)  Scan for WiFi (Aircrack)	         |  6) Check for Updates	       | 					
+3a) Scan for WiFi #2 (Arp)               |  7) Message to users		       |
 4)  Packet Sniffer (Aircrack)            |  8) Credits                         |
 5)  WiFi Card --> Managed Mode           |                                     |
 					 |				       |
@@ -230,6 +248,11 @@ then
 elif [ $choice == 2 ] 
 then
 	nmapipscan
+
+elif [ $choice == '2a' ] 
+then
+	nmapudpscan
+
 
 elif [ $choice == 3 ] 
 then
