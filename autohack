@@ -147,10 +147,8 @@ printf "${GREEN}
 ------------------------------------
 [✓]      ... UPDATING ...	[✓] |
 ------------------------------------"
-echo ''
-git add autohack
-git commit -m 'UPDATING USER | DISCARD'
-git pull
+echo 'FETCH TEST'
+git fetch
 printf "${GREEN}
 ------------------------------------
 [✓] 		UPDATED		[✓] |
