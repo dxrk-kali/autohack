@@ -148,6 +148,8 @@ printf "${GREEN}
 [✓]      ... UPDATING ...	[✓] |
 ------------------------------------"
 echo ''
+git add autohack
+git commit -m 'UPDATING USER | DISCARD'
 git pull
 printf "${GREEN}
 ------------------------------------
@@ -165,7 +167,7 @@ printf "${YLLW}
 ------------------------------------
 [!] Exit and restart AutoHack.  [!] |
 ------------------------------------"
-sleep 100
+sleep 5
 
 }
 
