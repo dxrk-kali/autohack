@@ -151,7 +151,7 @@ exit
 updater(){
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 2.11             [+] |
+[+]      Patch 2.31             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -217,7 +217,12 @@ echo ''
 echo ''
 echo ''
 }
-
+kaliupgrade(){
+gnome-terminal --command="bash -c 'sudo apt-get upgrade;$SHELL'" 
+}
+osupdate(){
+gnome-terminal --command="bash -c 'sudo apt-get update;$SHELL'" 
+}
 
 cli(){
 
@@ -229,7 +234,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v2.11  
+   				    v2.31  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -247,12 +252,15 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 	WiFi				 |	Other			       |		
 -------------------------------------------------------------------------------
-3)  Scan for WiFi (Aircrack)	         |  6) Check for Updates	       | 					
-3a) Scan for WiFi #2 (Arp)               |  7) Message to users		       |
-4)  Packet Sniffer (Aircrack)            |  8) Credits                         |
-5)  WiFi Card --> Managed Mode           |  Type 'exit' to quit the program    |
+3)  Scan for WiFi (Aircrack)	         |  6) Check for Updates               |
+3a) Scan for WiFi #2 (Arp) 	         |  7) Upgrade your Kali               |
+4)  Packet Sniffer (Aircrack) 	         |  8) Update Kali Image	       | 					
+5)  WiFi Card --> Managed Mode 	         |  9) Message to users		       |
+				         |  10) Credits                        |
+           				 |  				       |
 					 |				       |
 -------------------------------------------------------------------------------
+Type 'exit' to quit the program 
 ${DG}
 Hacking made simple.
 
@@ -300,10 +308,19 @@ then
 
 elif [ $choice == 7 ]
 then
-	usrmsg
+	kaliupgrade
 elif [ $choice == 8 ]
 then
+	osupdate
+
+elif [ $choice == 9 ]
+then
+	usrmsg
+
+elif [ $choice == 10 ]
+then
 	credits
+
 elif [ $choice == 'exit' ]
 then
 	exit
