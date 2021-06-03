@@ -159,10 +159,10 @@ printf "${GREEN}
 ------------------------------------"
 echo ''
 echo ''
-git add autohack
-#git reset --hard 2&>1 >/dev/null
-git commit -m '..user update..' #2&>1 >/dev/null
-git pull #2&>1 >/dev/null
+git add autohack 2&>1 >/dev/null
+git commit -m '..user update..' 2&>1 >/dev/null
+git pull 2&>1 >/dev/null
+
 sleep 1
 
 
