@@ -140,6 +140,7 @@ echo ''
 update(){
 updater
 clear
+clear
 ./autohack
 exit
 }
