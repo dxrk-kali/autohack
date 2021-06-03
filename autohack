@@ -141,6 +141,7 @@ update(){
 updater
 clear
 clear
+reset
 ./autohack
 exit
 }
