@@ -217,11 +217,15 @@ echo ''
 echo ''
 echo ''
 }
-kaliupgrade(){
-gnome-terminal --command="bash -c 'sudo apt-get upgrade;$SHELL'" 
-}
-osupdate(){
-gnome-terminal --command="bash -c 'sudo apt-get update;$SHELL'" 
+kaliupgrade_update(){
+sudo apt-get update
+sudo apt-get upgrade
+sleep 3
+clear
+clear
+reset
+./autohack
+exit
 }
 
 cli(){
@@ -234,7 +238,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v2.32  
+   				    v2.33  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -253,10 +257,9 @@ printf "${YLLW}
 	WiFi				 |	Other			       |		
 -------------------------------------------------------------------------------
 3)  Scan for WiFi (Aircrack)	         |  6) Check for Updates               |
-3a) Scan for WiFi #2 (Arp) 	         |  7) Upgrade your Kali               |
-4)  Packet Sniffer (Aircrack) 	         |  8) Update Kali Image	       | 					
-5)  WiFi Card --> Managed Mode 	         |  9) Message to users		       |
-				         |  10) Credits                        |
+3a) Scan for WiFi #2 (Arp) 	         |  7) Update & Upgrade your Kali OS   |
+4)  Packet Sniffer (Aircrack) 	         |  8) Message to users	               | 					
+5)  WiFi Card --> Managed Mode 	         |  9) Credits	 	               |
            				 |  				       |
 					 |				       |
 -------------------------------------------------------------------------------
@@ -303,21 +306,14 @@ elif [ $choice == 6 ]
 then
 	update
 	
-	
-	
-
 elif [ $choice == 7 ]
 then
-	kaliupgrade
+	kaliupgrade_update
 elif [ $choice == 8 ]
-then
-	osupdate
-
-elif [ $choice == 9 ]
 then
 	usrmsg
 
-elif [ $choice == 10 ]
+elif [ $choice == 9 ]
 then
 	credits
 
