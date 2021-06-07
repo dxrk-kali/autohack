@@ -160,7 +160,7 @@ updater(){
 clear
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 3.33             [+] |
+[+]      Patch 3.63             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -168,9 +168,9 @@ printf "${GREEN}
 ------------------------------------"
 echo ''
 echo ''
-git add autohack 2&>1 >/dev/null
-git commit -m '..user update..' 2&>1 >/dev/null
-git pull 2&>1 >/dev/null
+git add autohack
+git stash save
+git pull 
 
 sleep 1
 
@@ -239,7 +239,25 @@ reset
 ./attempt
 exit
 }
-
+searchsploit(){
+printf 'Searchsploit ---> '
+read query
+gnome-terminal --command="bash -c 'searchsploit $query;$SHELL'"
+}
+smbclient(){
+printf 'Enter username ---> '
+read usrname
+printf 'Enter target IP Address ---> '
+read targip
+gnome-terminal --command="bash -c 'smbclient -U '$usrname' -L //$targip;$SHELL'"
+}
+gobuster(){
+printf "Target IP ---> "
+read targip
+printf "Path to wordlist ---> "
+read wordlist
+gnome-terminal --command="bash -c 'gobuster dir -v -w $wordlist -u $targip;$SHELL'"
+}
 scan_enum(){
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -248,7 +266,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.33  
+                                    v3.63  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -294,6 +312,9 @@ then
 elif [ $choice == 'exit' ]
 then
 	exit
+elif [ $choice == 't' ]
+then
+	gobuster
 
 else
 	clear
@@ -312,7 +333,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.33  
+                                    v3.63  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -378,7 +399,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.33  
+                                    v3.63  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -446,7 +467,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v3.33  
+   				    v3.63  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
