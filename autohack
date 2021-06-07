@@ -150,7 +150,7 @@ updater
 clear
 clear
 reset
-./attempt
+./autohack
 exit
 }
 
