@@ -243,6 +243,10 @@ searchsploit(){
 printf 'Searchsploit ---> '
 read query
 gnome-terminal --command="bash -c 'searchsploit $query;$SHELL'"
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SEARCHING		 [✓] |
+-------------------------------------"
 }
 smbclient(){
 printf 'Enter username ---> '
@@ -250,6 +254,10 @@ read usrname
 printf 'Enter target IP Address ---> '
 read targip
 gnome-terminal --command="bash -c 'smbclient -U '$usrname' -L //$targip;$SHELL'"
+printf "${GREEN}
+-------------------------------------
+[✓] 	     💀FINISHED💀	 [✓] |
+-------------------------------------"
 }
 gobuster(){
 printf "Target IP ---> "
@@ -257,6 +265,67 @@ read targip
 printf "Path to wordlist ---> "
 read wordlist
 gnome-terminal --command="bash -c 'gobuster dir -v -w $wordlist -u $targip;$SHELL'"
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+}
+exploitation(){
+printf "${RED}
+    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
+   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
+   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
+   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
+   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
+   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
+                                    v3.63  
+${NC}"
+#OPTIONS START
+printf "${YLLW}
+-------------------------------------------------------------------------------
+                               💀 Exploitation 💀                              |                                                
+-------------------------------------------------------------------------------
+1)  Use SMBClient (smbclient)            |                                     |
+                    			 |                    	               |
+	         			 |				       |
+	 				 |                                     |
+   					 |                                     |
+                                         |                                     |                
+           MORE SOON!                    |            MORE SOON!               |                
+                                         |                                     |                
+-------------------------------------------------------------------------------
+Type 'back' to go return to the main menu
+Type 'exit' to quit the program 
+${DG}
+Hacking made simple.
+
+ ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+ 
+${NC}"
+#OPTIONS END
+printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+read choice
+
+if [ $choice == 1 ]
+then
+        smbclient
+
+elif [ $choice == 'back' ]
+then
+	continue
+	clear
+
+elif [ $choice == 'exit' ]
+then
+	exit
+
+
+else
+	clear
+	echo You did not select a valid option.
+	exploitation
+
+fi
 }
 scan_enum(){
 printf "${RED}
@@ -275,7 +344,9 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 1)  Nikto Web Scan (Nikto)               |                                     |
 2)  NMAP Scan (NMAP)                     |                                     |
-2a) NMAP UDP Scan (NMAP)                 |                                     |
+2a) NMAP UDP Scan (NMAP)	         |				       |
+3)  Gobuster Dir Scan (Gobuster)	 |                                     |
+4)  Searchsploit a vuln (searchsploit)   |                                     |
                                          |                                     |                
            MORE SOON!                    |            MORE SOON!               |                
                                          |                                     |                
@@ -303,6 +374,12 @@ then
 elif [ $choice == '2a' ]
 then
         nmapudpscan
+elif [ $choice == 3 ]
+then
+	gobuster
+elif [ $choice == 4 ]
+then
+	searchsploit
 
 elif [ $choice == 'back' ]
 then
@@ -312,9 +389,7 @@ then
 elif [ $choice == 'exit' ]
 then
 	exit
-elif [ $choice == 't' ]
-then
-	gobuster
+
 
 else
 	clear
@@ -475,8 +550,9 @@ printf "${YLLW}
                                        Menu 	                               |						
 -------------------------------------------------------------------------------
 1)  Scanning & Enumeration tools                                               |                                     
-2)  WiFi tools                                                                 |                                     
-3)  Other                                                                      |
+2)  WiFi tools								       |
+3)  Exploitation                                                               |                                     
+4)  Other                                                                      |
                                                                                |
                                                                                |                                 
 -------------------------------------------------------------------------------
@@ -501,6 +577,10 @@ then
 	wifi_exploit
 
 elif [ $choice == 3 ] 
+then
+	clear
+	exploitation
+elif [ $choice == 4 ] 
 then
 	clear
 	options
