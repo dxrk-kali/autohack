@@ -160,7 +160,7 @@ updater(){
 clear
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 3.73             [+] |
+[+]      Patch 3.83             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -270,6 +270,16 @@ printf "${GREEN}
 [✓] FINISHED SCANNING		 [✓] |
 -------------------------------------"
 }
+deauth(){
+printf "Enter target BSSID ---> "
+read bssid
+printf "Enter channel of AP ---> "
+read channel
+printf "Name of your wireless interface ---> "
+read wlan
+gnome-terminal --command="bash -c 'airodump-ng $wlan --bssid $bssid --channel $channel ;$SHELL'"
+gnome-terminal --command="bash -c 'aireplay-ng -0 0 -a $bssid $wlan;$SHELL'"
+}
 exploitation(){
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -278,7 +288,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.73  
+                                    v3.83  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -335,7 +345,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.73  
+                                     
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -408,17 +418,19 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.73  
+                                      
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
                                         WiFi                                   |                
 -------------------------------------------------------------------------------
-1)  Scan for WiFi (Aircrack)             |                                     |
-1a) Scan for WiFi #2 (Arp)               |                                     |
-2)  Packet Sniffer (Aircrack)            |         MORE SOON!                  |                                        
-3)  WiFi Card --> Managed Mode           |                                     |
+1)  Scan for Hosts (Aircrack)            |                                     |
+1a) Scan for Hosts #2 (Arp)              |				       |
+2)  Scan for WiFi		         |                                     |
+3)  Packet Sniffer (Aircrack)  		 |				       |
+4)  Perform Deauth Attack (Aireplay)     |         MORE SOON!                  |                                        
+5)  WiFi Card --> Managed Mode           |                                     |
                                          |                                     |
                                          |                                     |
 -------------------------------------------------------------------------------
@@ -443,12 +455,22 @@ then
 
 elif [ $choice == 2 ]
 then
-        sniffer
+        wifiscan
 
 
 elif [ $choice == 3 ]
 then
+        sniffer
+        
+elif [ $choice == 4 ]
+then
+        deauth
+        
+        
+elif [ $choice == 5 ]
+then
         managedmode
+
 
 elif [ $choice == 'back' ]
 then
@@ -474,7 +496,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                    v3.73  
+                                      
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
@@ -542,7 +564,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v3.73  
+   				      
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
