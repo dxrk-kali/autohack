@@ -236,7 +236,7 @@ sleep 3
 clear
 clear
 reset
-./attempt
+./autohack
 exit
 }
 searchsploit(){
