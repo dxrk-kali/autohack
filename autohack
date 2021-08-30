@@ -158,6 +158,12 @@ exit
 
 
 updater(){
+printf "Enter your github email: "
+read email
+printf "Enter your github username: "
+read username
+git config --global user.email "$email"
+git config --global user.name "$username"
 clear
 printf "${GREEN}
 ------------------------------------
@@ -169,8 +175,6 @@ printf "${GREEN}
 ------------------------------------"
 echo ''
 echo ''
-git add autohack
-git stash save
 git pull 
 
 sleep 1
