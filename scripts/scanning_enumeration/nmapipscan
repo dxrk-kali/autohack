@@ -1,0 +1,28 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+echo '[+] Please enter your target IP address ---> '
+read targip
+echo '[+] What ports would you like to scan on --->'
+echo '[*] Starting Port ---> '
+read startport
+echo '[*] End Port ---> '
+read endport
+#nmap -T4 -p$startport-$endport $targip
+gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv -p$startport-$endport $targip; $SHELL'"
+#working
+#fixed
+clear
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Sat Oct 23 18:35:09 2021 as: nmap -vv -&#45;reason -Pn -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/tcp_80_http_nmap.txt -oX /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/xml/tcp_80_http_nmap.xml 10.10.11.104 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/tcp_80_http_nmap.txt -oX /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/xml/tcp_80_http_nmap.xml 10.10.11.104" start="1635028509" startstr="Sat Oct 23 18:35:09 2021" version="7.91" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1635028509"/>
+<taskend task="NSE" time="1635028509"/>
+<taskbegin task="NSE" time="1635028509"/>
+<taskend task="NSE" time="1635028509"/>
+<taskbegin task="NSE" time="1635028509"/>
+<taskend task="NSE" time="1635028509"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1635028509"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1635028509"/>
+<taskbegin task="SYN Stealth Scan" time="1635028509"/>
+<taskend task="SYN Stealth Scan" time="1635028509" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1635028509"/>
+<taskend task="Service scan" time="1635028515" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1635028515"/>
+<taskend task="NSE" time="1635028535"/>
+<taskbegin task="NSE" time="1635028535"/>
+<taskend task="NSE" time="1635028536"/>
+<taskbegin task="NSE" time="1635028536"/>
+<taskend task="NSE" time="1635028536"/>
+<host starttime="1635028509" endtime="1635028536"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.104" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Apache httpd" version="2.4.29" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.29</cpe></service><script id="http-auth-finder" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104&#xa;  url                               method&#xa;  http://10.10.11.104:80/           FORM&#xa;  http://10.10.11.104:80/login.php  FORM&#xa;"/><script id="http-backup-finder" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-chrono" output="Request times for /; avg: 782.93ms; min: 452.80ms; max: 1751.55ms"/><script id="http-comments-displayer" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104&#xa;    &#xa;    Path: http://10.10.11.104:80/js/uikit.min.js&#xa;    Line number: 1&#xa;    Comment: &#xa;        /*! UIkit 3.6.22 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | MIT License */&#xa;"/><script id="http-cookie-flags" output="&#xa;  /: &#xa;    PHPSESSID: &#xa;      httponly flag not set&#xa;  /login.php: &#xa;    PHPSESSID: &#xa;      httponly flag not set"><table key="/">
+<table key="PHPSESSID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/login.php">
+<table key="PHPSESSID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+</script><script id="http-csrf" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104&#xa;  Found the following possible CSRF vulnerabilities: &#xa;    &#xa;    Path: http://10.10.11.104:80/&#xa;    Form id: &#xa;    Form action: login.php&#xa;    &#xa;    Path: http://10.10.11.104:80/login.php&#xa;    Form id: &#xa;    Form action: login.php&#xa;"/><script id="http-date" output="Sat, 23 Oct 2021 22:48:26 GMT; +13m09s from local time."><elem key="date">2021-10-23T22:48:26+00:00</elem>
+<elem key="delta">789.0</elem>
+</script><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-enum" output="&#xa;  /login.php: Possible admin folder&#xa;  /css/: Potentially interesting directory w/ listing on &apos;apache/2.4.29 (ubuntu)&apos;&#xa;  /js/: Potentially interesting directory w/ listing on &apos;apache/2.4.29 (ubuntu)&apos;&#xa;"/><script id="http-errors" output="Couldn&apos;t find any error pages."/><script id="http-favicon" output="Unknown favicon MD5: B21DD667DF8D81CAE6DD1374DD548004"/><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-fileupload-exploiter" output="&#xa;  &#xa;    Couldn&apos;t find a file-type field.&#xa;  &#xa;    Couldn&apos;t find a file-type field."><table>
+<elem>Couldn&apos;t find a file-type field.</elem>
+</table>
+<table>
+<elem>Couldn&apos;t find a file-type field.</elem>
+</table>
+</script><script id="http-grep" output="&#xa;  (4) http://10.10.11.104:80/js/uikit-icons.min.js: &#xa;    (4) ip: &#xa;      + 119.1.242.2&#xa;      + 35.1.36.28&#xa;      + 32.5.32.97&#xa;      + 1.22.55.55&#xa;  (1) http://10.10.11.104:80/js/: &#xa;    (1) ip: &#xa;      + 10.10.11.104"><table key="(4) http://10.10.11.104:80/js/uikit-icons.min.js">
+<table key="(4) ip">
+<elem>+ 119.1.242.2</elem>
+<elem>+ 35.1.36.28</elem>
+<elem>+ 32.5.32.97</elem>
+<elem>+ 1.22.55.55</elem>
+</table>
+</table>
+<table key="(1) http://10.10.11.104:80/js/">
+<table key="(1) ip">
+<elem>+ 10.10.11.104</elem>
+</table>
+</table>
+</script><script id="http-headers" output="&#xa;  Date: Sat, 23 Oct 2021 22:48:27 GMT&#xa;  Server: Apache/2.4.29 (Ubuntu)&#xa;  Set-Cookie: PHPSESSID=tfvlsn99lpqsofb7uv2j62pmr0; path=/&#xa;  Expires: Thu, 19 Nov 1981 08:52:00 GMT&#xa;  Cache-Control: no-store, no-cache, must-revalidate&#xa;  Pragma: no-cache&#xa;  Connection: close&#xa;  Content-Type: text/html; charset=UTF-8&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-malware-host" output="Host appears to be clean"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-php-version" output="Logo query returned unknown hash 90b4a076482e1d6b573e20d134dfc01f&#xa;Credits query returned unknown hash 90b4a076482e1d6b573e20d134dfc01f"/><script id="http-referer-checker" output="Couldn&apos;t find any cross-domain scripts."/><script id="http-security-headers" output="&#xa;  Cache_Control: &#xa;    Header: Cache-Control: no-store, no-cache, must-revalidate&#xa;  Pragma: &#xa;    Header: Pragma: no-cache&#xa;  Expires: &#xa;    Header: Expires: Thu, 19 Nov 1981 08:52:00 GMT"><table key="Cache_Control">
+<elem>Header: Cache-Control: no-store, no-cache, must-revalidate</elem>
+</table>
+<table key="Pragma">
+<elem>Header: Pragma: no-cache</elem>
+</table>
+<table key="Expires">
+<elem>Header: Expires: Thu, 19 Nov 1981 08:52:00 GMT</elem>
+</table>
+</script><script id="http-server-header" output="Apache/2.4.29 (Ubuntu)"><elem>Apache/2.4.29 (Ubuntu)</elem>
+</script><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      Other: 1; ico: 1; php: 1; png: 3; webmanifest: 1&#xa;    /css/&#xa;      css: 1&#xa;    /icons/&#xa;      gif: 2&#xa;    /js/&#xa;      Other: 1; js: 2&#xa;  Longest directory structure:&#xa;    Depth: 1&#xa;    Dir: /js/&#xa;  Total files found (by extension):&#xa;    Other: 2; css: 1; gif: 2; ico: 1; js: 2; php: 1; png: 3; webmanifest: 1&#xa;"/><script id="http-sql-injection" output="&#xa;  Possible sqli for queries:&#xa;    http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=%27%20OR%20sqlspider&amp;player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn&amp;%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1&#xa;    http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=&amp;player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn%27%20OR%20sqlspider&amp;%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1&#xa;    http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=&amp;player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn&amp;%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dD%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dD%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dD%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dD%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dD%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;"/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-title" output="Previse Login&#xa;Requested resource was login.php"><elem key="title">Previse Login</elem>
+<elem key="redirect_url">login.php</elem>
+</script><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Redirected To: login.php&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<elem key="Redirected To">login.php</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-vhosts" output="&#xa;128 names had status 302"/><script id="http-waf-detect" output="IDS/IPS/WAF detected:&#xa;10.10.11.104:80/?p4yl04d3=&lt;script&gt;alert(document.cookie)&lt;/script&gt;"/><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/></port>
+</ports>
+<times srtt="15486" rttvar="15486" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1635028536"/>
+<taskend task="NSE" time="1635028536"/>
+<taskbegin task="NSE" time="1635028536"/>
+<taskend task="NSE" time="1635028536"/>
+<taskbegin task="NSE" time="1635028536"/>
+<taskend task="NSE" time="1635028536"/>
+<runstats><finished time="1635028536" timestr="Sat Oct 23 18:35:36 2021" summary="Nmap done at Sat Oct 23 18:35:36 2021; 1 IP address (1 host up) scanned in 26.63 seconds" elapsed="26.63" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

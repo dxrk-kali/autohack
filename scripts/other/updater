@@ -1,0 +1,53 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+printf "Enter your github email: "
+read email
+printf "Enter your github username: "
+read username
+git config --global user.email "$email"
+git config --global user.name "$username"
+clear
+printf "${GREEN}
+------------------------------------
+[+]      Patch $patch             [+] |
+------------------------------------"
+printf "${GREEN}
+------------------------------------
+[✓]      ... UPDATING ...	[✓] |
+------------------------------------"
+echo ''
+echo ''
+git pull 
+
+sleep 1
+
+
+printf "${GREEN}
+------------------------------------
+[✓] 		UPDATED		[✓] |
+------------------------------------"
+printf "${GREEN}
+------------------------------------
+[✓] 	You are now up-to-date	[✓] |
+------------------------------------"
+printf "${GREEN}
+------------------------------------
+[✓] 	     Hack on.		[✓] |
+------------------------------------"
+printf "${YLLW}
+------------------------------------
+[!] ...Restarting Autohack...   [!] |
+------------------------------------"
+
+#gnome-terminal -- ./autohack
+sleep 5
+
+

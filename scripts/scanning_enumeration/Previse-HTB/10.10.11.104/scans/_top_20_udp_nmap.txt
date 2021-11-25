@@ -1,0 +1,55 @@
+# Nmap 7.91 scan initiated Sat Oct 23 18:35:00 2021 as: nmap -vv --reason -Pn -sU -A --top-ports=20 --version-all -oN /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/_top_20_udp_nmap.txt -oX /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/xml/_top_20_udp_nmap.xml 10.10.11.104
+adjust_timeouts2: packet supposedly had rtt of -85451 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -85451 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -410001 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -410001 microseconds.  Ignoring time.
+Nmap scan report for 10.10.11.104
+Host is up, received user-set (0.016s latency).
+Scanned at 2021-10-23 18:35:00 EDT for 17s
+
+PORT      STATE  SERVICE      REASON              VERSION
+53/udp    closed domain       port-unreach ttl 63
+67/udp    closed dhcps        port-unreach ttl 63
+68/udp    closed dhcpc        port-unreach ttl 63
+69/udp    closed tftp         port-unreach ttl 63
+123/udp   closed ntp          port-unreach ttl 63
+135/udp   closed msrpc        port-unreach ttl 63
+137/udp   closed netbios-ns   port-unreach ttl 63
+138/udp   closed netbios-dgm  port-unreach ttl 63
+139/udp   closed netbios-ssn  port-unreach ttl 63
+161/udp   closed snmp         port-unreach ttl 63
+162/udp   closed snmptrap     port-unreach ttl 63
+445/udp   closed microsoft-ds port-unreach ttl 63
+500/udp   closed isakmp       port-unreach ttl 63
+514/udp   closed syslog       port-unreach ttl 63
+520/udp   closed route        port-unreach ttl 63
+631/udp   closed ipp          port-unreach ttl 63
+1434/udp  closed ms-sql-m     port-unreach ttl 63
+1900/udp  closed upnp         port-unreach ttl 63
+4500/udp  closed nat-t-ike    port-unreach ttl 63
+49152/udp closed unknown      port-unreach ttl 63
+Too many fingerprints match this host to give specific OS details
+TCP/IP fingerprint:
+SCAN(V=7.91%E=4%D=10/23%OT=%CT=%CU=53%PV=Y%DS=2%DC=T%G=N%TM=61748E25%P=x86_64-pc-linux-gnu)
+SEQ(CI=Z%II=I)
+T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T5(R=Y%DF=Y%T=40%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=0%S=O%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T7(R=Y%DF=Y%T=40%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)
+U1(R=N)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%TG=40%CD=S)
+IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+
+TRACEROUTE (using port 139/udp)
+HOP RTT      ADDRESS
+1   14.82 ms 10.10.14.1
+2   16.36 ms 10.10.11.104
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Oct 23 18:35:17 2021 -- 1 IP address (1 host up) scanned in 17.20 seconds

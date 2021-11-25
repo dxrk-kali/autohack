@@ -1,0 +1,184 @@
+# Nmap 7.91 scan initiated Sat Oct 23 18:35:09 2021 as: nmap -vv --reason -Pn -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/tcp_80_http_nmap.txt -oX /home/dxrk/devwork/autohack/scripts/scanning_enumeration/Previse-HTB/10.10.11.104/scans/xml/tcp_80_http_nmap.xml 10.10.11.104
+Nmap scan report for 10.10.11.104
+Host is up, received user-set (0.015s latency).
+Scanned at 2021-10-23 18:35:09 EDT for 27s
+
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.29 ((Ubuntu))
+| http-auth-finder: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104
+|   url                               method
+|   http://10.10.11.104:80/           FORM
+|_  http://10.10.11.104:80/login.php  FORM
+|_http-backup-finder: ERROR: Script execution failed (use -d to debug)
+|_http-chrono: Request times for /; avg: 782.93ms; min: 452.80ms; max: 1751.55ms
+| http-comments-displayer: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104
+|     
+|     Path: http://10.10.11.104:80/js/uikit.min.js
+|     Line number: 1
+|     Comment: 
+|_        /*! UIkit 3.6.22 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | MIT License */
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|       httponly flag not set
+|   /login.php: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.104
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.104:80/
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://10.10.11.104:80/login.php
+|     Form id: 
+|_    Form action: login.php
+|_http-date: Sat, 23 Oct 2021 22:48:26 GMT; +13m09s from local time.
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+| http-enum: 
+|   /login.php: Possible admin folder
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.29 (ubuntu)'
+|_  /js/: Potentially interesting directory w/ listing on 'apache/2.4.29 (ubuntu)'
+|_http-errors: Couldn't find any error pages.
+|_http-favicon: Unknown favicon MD5: B21DD667DF8D81CAE6DD1374DD548004
+|_http-feed: Couldn't find any feeds.
+|_http-fetch: Please enter the complete path of the directory to save data in.
+| http-fileupload-exploiter: 
+|   
+|     Couldn't find a file-type field.
+|   
+|_    Couldn't find a file-type field.
+| http-grep: 
+|   (4) http://10.10.11.104:80/js/uikit-icons.min.js: 
+|     (4) ip: 
+|       + 119.1.242.2
+|       + 35.1.36.28
+|       + 32.5.32.97
+|       + 1.22.55.55
+|   (1) http://10.10.11.104:80/js/: 
+|     (1) ip: 
+|_      + 10.10.11.104
+| http-headers: 
+|   Date: Sat, 23 Oct 2021 22:48:27 GMT
+|   Server: Apache/2.4.29 (Ubuntu)
+|   Set-Cookie: PHPSESSID=tfvlsn99lpqsofb7uv2j62pmr0; path=/
+|   Expires: Thu, 19 Nov 1981 08:52:00 GMT
+|   Cache-Control: no-store, no-cache, must-revalidate
+|   Pragma: no-cache
+|   Connection: close
+|   Content-Type: text/html; charset=UTF-8
+|   
+|_  (Request type: HEAD)
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-malware-host: Host appears to be clean
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-mobileversion-checker: No mobile version detected.
+| http-php-version: Logo query returned unknown hash 90b4a076482e1d6b573e20d134dfc01f
+|_Credits query returned unknown hash 90b4a076482e1d6b573e20d134dfc01f
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+| http-security-headers: 
+|   Cache_Control: 
+|     Header: Cache-Control: no-store, no-cache, must-revalidate
+|   Pragma: 
+|     Header: Pragma: no-cache
+|   Expires: 
+|_    Header: Expires: Thu, 19 Nov 1981 08:52:00 GMT
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1; ico: 1; php: 1; png: 3; webmanifest: 1
+|     /css/
+|       css: 1
+|     /icons/
+|       gif: 2
+|     /js/
+|       Other: 1; js: 2
+|   Longest directory structure:
+|     Depth: 1
+|     Dir: /js/
+|   Total files found (by extension):
+|_    Other: 2; css: 1; gif: 2; ico: 1; js: 2; php: 1; png: 3; webmanifest: 1
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=%27%20OR%20sqlspider&player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn&%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1
+|     http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=&player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn%27%20OR%20sqlspider&%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1
+|     http://10.10.11.104:80/js/e.src+(w(e.src,%22?%22%29%3f%22=&player_id=%22%2bo%29%7d%29.then%28function%28%29%7breturn&%22%3a%22%3f%22%29%2b%28i%3f%22enablejsapi=1%22%3a%22api%3d1%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dD%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=N%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=S%3bO%3dA%27%20OR%20sqlspider
+|     http://10.10.11.104:80/js/?C=M%3bO%3dA%27%20OR%20sqlspider
+|_    http://10.10.11.104:80/js/?C=D%3bO%3dA%27%20OR%20sqlspider
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-title: Previse Login
+|_Requested resource was login.php
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Redirected To: login.php
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+| http-vhosts: 
+|_128 names had status 302
+| http-waf-detect: IDS/IPS/WAF detected:
+|_10.10.11.104:80/?p4yl04d3=<script>alert(document.cookie)</script>
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Oct 23 18:35:36 2021 -- 1 IP address (1 host up) scanned in 26.63 seconds
