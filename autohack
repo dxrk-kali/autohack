@@ -2,7 +2,7 @@
 
 #COLORS
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NC='\033[0m' #No color
 GREEN='\033[1;32m'
 YLLW='\033[1;33m'
 DG='\033[0;37m'
