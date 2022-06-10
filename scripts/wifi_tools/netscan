@@ -1,0 +1,24 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+echo 'Enter your subnet ---> '
+read subnet
+echo 'Example | 192.168.0.0/24'
+#nmap -sn $subnet
+gnome-terminal --command="bash -c 'nmap -sn $subnet; $SHELL'"
+#working
+#fixed
+clear
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1

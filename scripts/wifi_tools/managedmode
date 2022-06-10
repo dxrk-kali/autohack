@@ -1,0 +1,22 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+echo [+] Wlan0 will now be returned to managed mode!
+#airmon-ng stop wlan0mon
+#service NetworkManager restart
+gnome-terminal --command="bash -c 'airmon-ng stop wlan0mon; service NetworkManager restart;$SHELL'"
+#fixed
+clear
+printf "${GREEN}
+-------------------------------------
+[✓] WIFI CARD ----> MANAGED MODE [✓] |
+-------------------------------------"
+
+sleep 1

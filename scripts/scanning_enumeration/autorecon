@@ -1,0 +1,16 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+printf "Enter Target IP Address ---> "
+read targip
+printf "Name the Directory for the ouput ---> "
+read folder
+printf ${GREEN}"This tool is powered by the amazing github repo: AutoRecon by Tib3rius. If you don't have it and the dependencies of that project installed. You can find and download the project here ---> https://github.com/Tib3rius/AutoRecon"${NC}
+gnome-terminal --command="bash -c 'autorecon $targip -o $folder; $SHELL'"

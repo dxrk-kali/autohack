@@ -1,0 +1,19 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+echo ''
+echo ''
+echo "Thanks for downloading and running my script. It took me a little bit of time to learn bash scripting to put this together. But i wanted to share it with the community! I know it's simple but i hope it helps save some time. I plan to take suggestions on other functions i can implement and release, leave a comment or send me a message with your ideas!
+	
+	*P.S. | Feel free to simply edit the source code to customize your own unique patch.*
+	 
+							Enjoy!"
+echo ''
+echo ''

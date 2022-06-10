@@ -1,0 +1,45 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+wordlist='/usr/share/wordlists/dirbuster/'
+printf "Target URL ---> "
+read targip
+printf "Choose a Wordlist from /usr/share/wordlists/dirbuster/:
+1) directory-list-2.3-small.txt
+2) directory-list-2.3-medium.txt
+3) directory-list-lowercase-2.3-small.txt
+4) directory-list-lowercase-2.3-medium.txt"
+read choice
+if [ $choice == 1 ]
+then
+	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt'
+	
+elif [ $choice == 2 ]
+then
+	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt'	
+	
+elif [ $choice == 3 ]
+then
+	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt'
+	
+elif [ $choice == 4 ]
+then
+	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt'
+else
+	echo 'You did not enter a valid parameter!'
+	gobuster
+fi
+
+
+gnome-terminal --command="bash -c 'gobuster dir -w $wordlist -u $targip;$SHELL'"
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"

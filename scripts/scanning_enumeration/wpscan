@@ -1,0 +1,37 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+printf "Enter Target URL ---> "
+read targurl
+printf "Would you like to save the output to a new text file?(y/n)"
+read choice
+if [ $choice == y ]
+then
+	printf "Name for output file: "
+	read outputfile
+	gnome-terminal --command="bash -c 'wpscan --url $targurl -o $outputfile; $SHELL'"
+else
+	gnome-terminal --command="bash -c 'wpscan --url $targurl --enumerate u,ap,tt,t; $SHELL'"
+fi
+}
+dependencies_installer(){
+#THIS IS DEF OVERKILL
+apt-get install gobuster
+
+apt-get install gnome-terminal
+
+apt install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
+}
+scouter(){
+printf "Enter target BSSID ---> "
+read bssid
+printf "Enter Channel ----> "
+read channel
+gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel wlan0mon; $SHELL'"

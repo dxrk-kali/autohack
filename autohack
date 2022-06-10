@@ -2,364 +2,153 @@
 
 #COLORS
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NC='\033[0m' #No color
 GREEN='\033[1;32m'
 YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
-patch=4.83
+patch=5.00
 #END COLORS
 
 nmapipscan(){
-echo '[+] Please enter your target IP address ---> '
-read targip
-echo '[+] What ports would you like to scan on --->'
-echo '[*] Starting Port ---> '
-read startport
-echo '[*] End Port ---> '
-read endport
-#nmap -T4 -p$startport-$endport $targip
-gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv -p$startport-$endport $targip; $SHELL'"
-#working
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
-
-sleep 1
+cd scripts/scanning_enumeration
+./nmapipscan
+cd ..
+cd ..
 }
 nmapudpscan(){
-echo '[+] Please enter your target IP address ---> '
-read targip
-echo '[+] What ports would you like to scan on --->'
-echo '[*] Starting Port ---> '
-read startport
-echo '[*] End Port ---> '
-read endport
-#nmap -T4 -p$startport-$endport $targip
-gnome-terminal --command="bash -c 'nmap -T4 -sU -vv -p$startport-$endport $targip; $SHELL'"
-#working
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
-
+cd scripts/scanning_enumeration
+./nmapudpscan
+cd ..
+cd ..
 }
-
 niktowebscan(){
-printf  "${YLLW}[+] Enter the URL you would like to scan ---> "
-read url
-#nikto -h $url
-gnome-terminal --command="bash -c 'nikto -h $url; $SHELL'"
-#working
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
-
-sleep 1
+cd scripts/scanning_enumeration
+./niktowebscan
+cd ..
+cd ..
 }
-
 netscan(){
-echo 'Enter your subnet ---> '
-read subnet
-echo 'Example | 192.168.0.0/24'
-#nmap -sn $subnet
-gnome-terminal --command="bash -c 'nmap -sn $subnet; $SHELL'"
-#working
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
-
-sleep 1
+cd scripts/wifi_tools
+./netscan
+cd ..
+cd ..
 }
-
 sniffer(){
-echo '[+] Enter target BSSID ---> '
-read bssid
-echo '[+] Enter the channel # ---> '
-read channel
-echo '[+] Choose a name to save your .cap file ---> '
-read filename
-#airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon
-gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon; $SHELL'"
-#fixed
-clear
-printf "${GREEN}
-------------------------------------
-[✓] 	FINISHED SNIFFING	[✓] |
-------------------------------------"
-
-sleep 1
-#working
+cd scripts/wifi_tools
+./sniffer
+cd ..
+cd ..
 }
-
 wifiscan(){
-#airmon-ng check kill
-#airmon-ng start wlan0
-echo '[*] Wlan0 is now in Monitor Mode -----> wlan0mon'
-sleep 1
-gnome-terminal --command="bash -c 'airmon-ng check kill; airmon-ng start wlan0 ;airodump-ng --band abg wlan0mon; $SHELL'" #airodump-ng --band abg wlan0mon
-#working
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
-
-sleep 1
+cd scripts/wifi_tools
+./wifiscan
+cd ..
+cd ..
 }
-
 managedmode(){
-echo [+] Wlan0 will now be returned to managed mode!
-#airmon-ng stop wlan0mon
-#service NetworkManager restart
-gnome-terminal --command="bash -c 'airmon-ng stop wlan0mon; service NetworkManager restart;$SHELL'"
-#fixed
-clear
-printf "${GREEN}
--------------------------------------
-[✓] WIFI CARD ----> MANAGED MODE [✓] |
--------------------------------------"
-
-sleep 1
+cd scripts/wifi_tools
+./managedmode
+cd ..
+cd ..
 }
-
 usrmsg(){
-echo ''
-echo ''
-echo "Thanks for downloading and running my script. It took me a little bit of time to learn bash scripting to put this together. But i wanted to share it with the community! I know it's simple but i hope it helps save some time. I plan to take suggestions on other functions i can implement and release, leave a comment or send me a message with your ideas!
-	
-	*P.S. | Feel free to simply edit the source code to customize your own unique patch.*
-	 
-							Enjoy!"
-echo ''
-echo ''
+cd scripts/other
+./usrmsg
+cd ..
+cd ..
 }
 update(){
-updater
-clear
-clear
-reset
-./autohack
-exit
+cd scripts/other
+./update
+cd ..
+cd ..
 }
-
-
-
 updater(){
-printf "Enter your github email: "
-read email
-printf "Enter your github username: "
-read username
-git config --global user.email "$email"
-git config --global user.name "$username"
-clear
-printf "${GREEN}
-------------------------------------
-[+]      Patch $patch             [+] |
-------------------------------------"
-printf "${GREEN}
-------------------------------------
-[✓]      ... UPDATING ...	[✓] |
-------------------------------------"
-echo ''
-echo ''
-git pull 
-
-sleep 1
-
-
-printf "${GREEN}
-------------------------------------
-[✓] 		UPDATED		[✓] |
-------------------------------------"
-printf "${GREEN}
-------------------------------------
-[✓] 	You are now up-to-date	[✓] |
-------------------------------------"
-printf "${GREEN}
-------------------------------------
-[✓] 	     Hack on.		[✓] |
-------------------------------------"
-printf "${YLLW}
-------------------------------------
-[!] ...Restarting Autohack...   [!] |
-------------------------------------"
-
-#gnome-terminal -- ./autohack
-sleep 5
-
-
+cd scripts/other
+./updater
+cd ..
+cd ..
 }
-
 arpscan(){
-gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'" 2&>1 >/dev/null
-clear
-
+cd scripts/wifi_tools
+./arpscan
+cd ..
+cd ..
 }
 
 credits(){
-clear
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''	
-printf "${YLLW}
-________________________________
-Created by:                     |           	
---------------------------------|            	
-${RED}	dxrk${YLLW}      		|             	
-				|            	
---------------------------------|           	
-Contributors:                   |          	
---------------------------------|          	
-${GREEN}	asorg ${YLLW}   	        |         	
-				|              	
---------------------------------                   "
-sleep 2
-echo ''
-echo ''
-echo ''
+cd scripts/other
+./credits_msg
+cd ..
+cd ..
 }
 kaliupgrade_update(){
-clear
-sudo apt-get update
-sudo apt-get upgrade
-sleep 3
-clear
-clear
-reset
-./autohack
-exit
+cd scripts/other
+./kaliupgrade_update
+cd ..
+cd ..
 }
 searchsploit(){
-printf 'Searchsploit ---> '
-read query
-gnome-terminal --command="bash -c 'searchsploit $query;$SHELL'"
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SEARCHING		 [✓] |
--------------------------------------"
+cd scripts/scanning_enumeration
+./searchsploit
+cd ..
+cd ..
 }
 smbclient(){
-printf 'Enter username ---> '
-read usrname
-printf 'Enter target IP Address ---> '
-read targip
-gnome-terminal --command="bash -c 'smbclient -U '$usrname' -L //$targip;$SHELL'"
-printf "${GREEN}
--------------------------------------
-[✓] 	     💀FINISHED💀	 [✓] |
--------------------------------------"
+cd scripts/exploitation
+./smbclient
+cd ..
+cd ..
 }
 gobuster(){
-wordlist='/usr/share/wordlists/dirbuster/'
-printf "Target URL ---> "
-read targip
-printf "Choose a Wordlist from /usr/share/wordlists/dirbuster/:
-1) directory-list-2.3-small.txt
-2) directory-list-2.3-medium.txt
-3) directory-list-lowercase-2.3-small.txt
-4) directory-list-lowercase-2.3-medium.txt"
-read choice
-if [ $choice == 1 ]
-then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt'
-	
-elif [ $choice == 2 ]
-then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt'	
-	
-elif [ $choice == 3 ]
-then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt'
-	
-elif [ $choice == 4 ]
-then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt'
-else
-	echo 'You did not enter a valid parameter!'
-	gobuster
-fi
-
-
-gnome-terminal --command="bash -c 'gobuster dir -w $wordlist -u $targip;$SHELL'"
-printf "${GREEN}
--------------------------------------
-[✓] FINISHED SCANNING		 [✓] |
--------------------------------------"
+cd scripts/scanning_enumeration
+./gobuster
+cd ..
+cd ..
 }
 deauth(){
-printf "Enter target BSSID ---> "
-read bssid
-printf "Enter channel of AP ---> "
-read channel
-printf "Name of your wireless interface ---> "
-read wlan
-gnome-terminal --command="bash -c 'airodump-ng $wlan --bssid $bssid --channel $channel ;$SHELL'"
-gnome-terminal --command="bash -c 'aireplay-ng -0 0 -a $bssid $wlan;$SHELL'"
+cd scripts/exploitation
+./deauth
+cd ..
+cd ..
 }
 massdeauth(){
-printf "${RED}
--------------------------------------
-[💀]     MASS DEUATH ATTACK     [💀] |
--------------------------------------"
-echo ''
-printf "Enter the name of your wireless deivce in monitor mode ---> "
-read wlan
-printf "Enter the channels you would like to deauth on --->"
-read channels
-printf "Example: 6,11,36"
-gnome-terminal --command="bash -c 'echo 💀 HIT CONTROL C TO STOP THE ATTACK 💀; mdk3 $wlan d -c $channels;$SHELL'"
+cd scripts/exploitation
+./massdeauth
+cd ..
+cd ..
 
 }
 monitormode(){
-printf "${GREEN}
--------------------------------------
-[✓]    ENTERING MONITOR MODE     [✓] |
--------------------------------------"
-airmon-ng check kill
-printf "${GREEN}
--------------------------------------
-[✓]    ENTERING MONITOR MODE     [✓] |
--------------------------------------"
+cd scripts/wifi_tools
+./monitormode
+cd ..
+cd ..
 }
 macspoof(){
-printf "Are you using eth0 or wlan0? ---> "
-read interface
-gnome-terminal --command="bash -c 'sudo su; ifconfig $interface down; macchanger -r $interface; ifconfig $interface up; macchanger -s $interface; $SHELL'"
-#ifconfig $interface down
-#macchanger -r $interface 
-#ifconfig $interface up
-#macchanger -s $interface
-
+cd scripts/anonymity
+./macspoof
+cd ..
+cd ..
 }
 smbsigning(){
-printf "Enter Target IP Address or Subnet ---> "
-read victim
-gnome-terminal --command="bash -c 'nmap --script=smb2-security-mode.nse -p139,445 $victim; $SHELL'"
+cd scripts/scanning_enumeration
+./smbsigning
+cd ..
+cd ..
 }
 autorecon(){
-printf "Enter Target IP Address ---> "
-read targip
-printf "Name the Directory for the ouput ---> "
-read folder
-printf ${GREEN}"This tool is powered by the amazing github repo: AutoRecon by Tib3rius. If you don't have it and the dependencies of that project installed. You can find and download the project here ---> https://github.com/Tib3rius/AutoRecon"${NC}
-gnome-terminal --command="bash -c 'autorecon $targip -o $folder; $SHELL'"
+cd scripts/scanning_enumeration
+./autorecon
+cd ..
+cd ..
 }
 wpscan(){
+cd scripts/scanning_enumeration
+./wpscan
+cd ..
+cd ..
 printf "Enter Target URL ---> "
 read targurl
 printf "Would you like to save the output to a new text file?(y/n)"
@@ -388,13 +177,21 @@ apt-get install gnome-terminal
 apt install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
 }
 scouter(){
-printf "Enter target BSSID ---> "
-read bssid
-printf "Enter Channel ----> "
-read channel
-gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel wlan0mon; $SHELL'"
+cd scripts/wifi_tools
+./scouter
+cd ..
+cd ..
 }
+ferox(){
+cd scripts/scanning_enumeration
+./ferox
+cd ..
+cd ..
+}
+
+#-----------------------------------------------------------------------------------------------------
 exploitation(){
+
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
@@ -460,6 +257,7 @@ else
 fi
 }
 scan_enum(){
+
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
@@ -483,6 +281,7 @@ printf "${YLLW}
 5)  SMB Signing checker (NMAP script)    |				       |
 6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
 7)  WPscan a WordPress Site (WPscan)     |                                     |
+8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
                                          |                                     |                
            	                         |            MORE SOON!               |                
                                          |                                     |                
@@ -531,6 +330,10 @@ then
 elif [ $choice == 7 ]
 then
 	wpscan
+	
+elif [ $choice == 8 ]
+then
+	ferox
 
 elif [ $choice == 'back' ]
 then
@@ -552,6 +355,7 @@ fi
 
 
 wifi_exploit(){
+ 
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
@@ -636,6 +440,7 @@ fi
 }
 
 options(){
+
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
@@ -700,6 +505,7 @@ fi
 
 }
 anonymity(){
+
 printf "${RED}
     █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   

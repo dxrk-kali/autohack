@@ -1,0 +1,21 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+echo '[*] Wlan0 is now in Monitor Mode -----> wlan0mon'
+sleep 1
+gnome-terminal --command="bash -c 'airmon-ng check kill; airmon-ng start wlan0 ;airodump-ng --band abg wlan0mon; $SHELL'" #airodump-ng --band abg wlan0mon
+#working
+#fixed
+printf "${GREEN}
+-------------------------------------
+[✓] FINISHED SCANNING		 [✓] |
+-------------------------------------"
+
+sleep 1
