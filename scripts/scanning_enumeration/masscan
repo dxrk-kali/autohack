@@ -1,0 +1,5 @@
+#!/bin/bash
+printf "Enter Target IP Address/Subnet ---> "
+read targip
+gnome-terminal --command="bash -c 'masscan $targip --ports 0-65535; $SHELL'"
+exit
