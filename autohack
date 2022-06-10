@@ -170,11 +170,15 @@ cd ..
 }
 dependencies_installer(){
 #THIS IS DEF OVERKILL
-apt-get install gobuster
+apt-get update
 
-apt-get install gnome-terminal
+apt-get upgrade
 
-apt install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
+apt install wkhtmltopdf
+
+apt install redis-tools
+
+apt-get install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb gobuster
 }
 scouter(){
 cd scripts/wifi_tools
@@ -581,6 +585,7 @@ printf "${YLLW}
 3)  Exploitation                                                               |
 4)  Anonymity                                                                  |                                     
 5)  Other                                                                      |
+6)  Install Dependencies                                                       |
                                                                                |
                                                                                |                                 
 -------------------------------------------------------------------------------
@@ -617,6 +622,11 @@ elif [ $choice == 5 ]
 then
 	clear
 	options
+	
+elif [ $choice == 6 ] 
+then
+	clear
+	dependencies_installer
 
 
 elif [ $choice == 'exit' ]
