@@ -149,6 +149,32 @@ cd scripts/scanning_enumeration
 ./wpscan
 cd ..
 cd ..
+printf "Enter Target URL ---> "
+read targurl
+printf "Would you like to save the output to a new text file?(y/n)"
+read choice
+if [ $choice == y ]
+then
+	printf "Name for output file: "
+	read outputfile
+	gnome-terminal --command="bash -c 'wpscan --url $targurl -o $outputfile; $SHELL'"
+else
+	gnome-terminal --command="bash -c 'wpscan --url $targurl --enumerate u,ap,tt,t; $SHELL'"
+fi
+}
+masscan(){
+printf "Enter Target IP Address/Subnet ---> "
+read targip
+gnome-terminal --command="bash -c 'masscan $targip; $SHELL'"
+
+}
+dependencies_installer(){
+#THIS IS DEF OVERKILL
+apt-get install gobuster
+
+apt-get install gnome-terminal
+
+apt install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
 }
 scouter(){
 cd scripts/wifi_tools
@@ -249,6 +275,7 @@ printf "${YLLW}
 1)  Nikto Web Scan (Nikto)               |                                     |
 2)  NMAP Scan (NMAP)                     |                                     |
 2a) NMAP UDP Scan (NMAP)	         |				       |
+2b) Masscan Scan (masscan)               |                                     |
 3)  Gobuster Dir Scan (Gobuster)	 |                                     |
 4)  Launch Searchsploit (searchsploit)   |				       |
 5)  SMB Signing checker (NMAP script)    |				       |
@@ -282,6 +309,9 @@ then
 elif [ $choice == '2a' ]
 then
         nmapudpscan
+elif [ $choice == '2b' ]
+then
+        masscan
 elif [ $choice == 3 ]
 then
 	gobuster
