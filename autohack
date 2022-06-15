@@ -7,7 +7,7 @@ GREEN='\033[1;32m'
 YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
-patch=5.00
+patch=5.01
 #END COLORS
 
 nmapipscan(){
