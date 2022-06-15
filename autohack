@@ -192,6 +192,11 @@ cd scripts/scanning_enumeration
 cd ..
 cd ..
 }
+portforward(){
+cd scripts/wifi_tools
+./portforward
+cd ../..
+}
 
 #-----------------------------------------------------------------------------------------------------
 exploitation(){
@@ -381,6 +386,7 @@ printf "${YLLW}
 4)  Scout a network for hosts (Aircrack) |				       |
 5)  Wifi Card --> Monitor Mode	         |         MORE SOON!                  |                                        
 6)  WiFi Card --> Managed Mode           |                                     |
+7)  Enable Port Forwarding               |                                     |
                                          |                                     |
                                          |                                     |
 -------------------------------------------------------------------------------
@@ -425,7 +431,9 @@ elif [ $choice == 6 ]
 then
         managedmode
 
-
+elif [ $choice == 7 ]
+then
+        portforward
 
 elif [ $choice == 'back' ]
 then
