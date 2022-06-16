@@ -150,7 +150,7 @@ cd scripts/scanning_enumeration
 cd ../..
 }
 dependencies_installer(){
-cd scripts/other/dependencies
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/dependencies
 ./masterInstaller
 cd ../../..
 }
