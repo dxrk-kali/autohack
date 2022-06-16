@@ -1,0 +1,45 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+#END COLORS 
+printf "${YLLW}Thanks to @ edoardottt on github for creating Scilla!"
+printf "\nYou are about to enumerate directories, would you like to save output to a txt/html file?(y/n)"
+read choice
+
+if [ $choice == 'y' ]
+then
+	printf "Html (1) or txt (2) file?(1/2)"
+	read choice2
+	if [ $choice2 == 1 ]
+	then
+		filetype="-oh"
+	else
+		filetype="-ot"
+	fi
+	printf "Provide a name for the file: "
+	read filename
+	printf "Enter Domain/Url to spider off of: "
+	read target
+	scilla dir $filetype $filename -target $target
+	
+elif [ $choice == 'n' ]
+then
+	printf "Enter target domain/url to spider off of: "
+	read domain
+	printf "\nYou can find your txt/html file with the enumerated directories in "
+	pwd 
+	printf " $filename"
+
+	scilla dir -target $domain
+	
+else
+	printf "You did not enter a valid input"
+	clear
+	./scillaDir
+fi
+
