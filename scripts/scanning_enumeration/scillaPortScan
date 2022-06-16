@@ -1,0 +1,30 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+printf "${YLLW}Enter target IP address / Domain --> "
+read targ
+printf "\n You have 3 options for a scilla port scan:\n1. Scan a range of ports by entering a starting and ending port, it will scan all ports in that range. \n2. Enter a list of specified ports to scan. \n3. Scan all ports"
+printf "\n Which would you like to do? 1,2 or 3: "
+read option
+if [ $option == 1 ]
+then
+	printf "\nStarting Port: "
+	read start
+	printf "\nEnd Port: "
+	read end
+	scilla port -p $start-$end -target $targ
+elif [ $option == 2 ]
+then
+	printf "Enter a list of ports seperated by commas, eg: 22,80,443... --> "
+	read list
+	scilla port -p $list -target $targ
+else
+	scilla port -target $targ
+fi
