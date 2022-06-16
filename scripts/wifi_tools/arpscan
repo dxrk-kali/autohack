@@ -8,6 +8,6 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=4.84
 #END COLORS
-gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'" 2&>1 >/dev/null
+gnome-terminal --command="bash -c 'arp-scan -l;$SHELL'"
 
 
