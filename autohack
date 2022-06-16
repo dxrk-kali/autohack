@@ -197,6 +197,11 @@ cd scripts/wifi_tools
 ./portforward
 cd ../..
 }
+scillaDirEnum(){
+cd scripts/scanning_enumeration
+gnome-terminal --command="bash -c './scillaDir; $SHELL'"
+cd ../..
+}
 
 #-----------------------------------------------------------------------------------------------------
 exploitation(){
@@ -291,6 +296,7 @@ printf "${YLLW}
 6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
 7)  WPscan a WordPress Site (WPscan)     |                                     |
 8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
+9)  Scilla Dir Enumeration (Scilla)      |                                     |
                                          |                                     |                
            	                         |            MORE SOON!               |                
                                          |                                     |                
@@ -344,6 +350,10 @@ elif [ $choice == 8 ]
 then
 	ferox
 
+elif [ $choice == 9 ]
+then
+	scillaDirEnum
+	
 elif [ $choice == 'back' ]
 then
 	continue
