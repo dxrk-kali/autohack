@@ -10,9 +10,21 @@ patch=5.01
 #END COLORS
 curpath=`pwd`
 cdScilla=`cd ../../scanning_enumeration/scilla`
-echo $cdScilla
+cd $cdScilla
+sleep 1
+printf "Now in scilla territory [✓] "
 go get
+sleep 1 
+printf "Installing Go..."
+go version
+printf "Go installed [✓] "
 make linux
+printf "Installed Scilla Dependencies [✓] "
 cd curpath
+printf "Back in Dependencies folder [✓] "
 printf "${GREEN}[✓] SCILLA INSTALLED [✓]"
+
+
+#apt install docker.io
+#apt install podman-docker
 
