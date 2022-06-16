@@ -7,6 +7,8 @@ YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS 
+whereah=`which autohack`; 
+cd ${whereah::-8}/results;
 printf "${YLLW}Thanks to @ edoardottt on github for creating Scilla!"
 printf "\nYou are about to enumerate directories, would you like to save output to a txt/html file?(y/n)"
 read choice
