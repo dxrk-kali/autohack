@@ -8,11 +8,13 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=4.84
 #END COLORS
+whereah=`which autohack`; 
+cd ${whereah::-8}
 printf "Enter Target IP Address ---> "
 read targip
 printf "Name the Directory for the ouput ---> "
 read folder
-cd AutoRecon
-gnome-terminal --command="bash -c 'python3 autorecon.py $targip -o Results/$folder; $SHELL'"
+cd scripts/scanning_enumeration/AutoRecon
+gnome-terminal --command="bash -c 'python3 autorecon.py $targip -o ${whereah::-8}/results/$folder; $SHELL'"
 printf ${GREEN}"This tool is powered by the amazing github repo: AutoRecon by Tib3rius. If you don't have it and the dependencies of that project installed. You can find and download the project here ---> https://github.com/Tib3rius/AutoRecon"${NC}
 cd ..
