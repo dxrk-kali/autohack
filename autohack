@@ -1,5 +1,9 @@
 #!/bin/bash
-
+if [ $EUID != 0 ]
+then
+	printf "Needs to be run as root/sudo user.\n"
+	exit 1;
+fi
 #COLORS
 RED='\033[0;31m'
 NC='\033[0m' #No color
@@ -129,26 +133,22 @@ cd ..
 macspoof(){
 cd scripts/anonymity
 ./macspoof
-cd ..
-cd ..
+cd ../..
 }
 smbsigning(){
 cd scripts/scanning_enumeration
 ./smbsigning
-cd ..
-cd ..
+cd ../..
 }
 autorecon(){
 cd scripts/scanning_enumeration
 ./autorecon
-cd ..
-cd ..
+cd ../..
 }
 wpscan(){
 cd scripts/scanning_enumeration
 ./wpscan
-cd ..
-cd ..
+cd ../..
 printf "Enter Target URL ---> "
 read targurl
 printf "Would you like to save the output to a new text file?(y/n)"
@@ -165,8 +165,7 @@ fi
 masscan(){
 cd scripts/scanning_enumeration
 ./masscan
-cd ..
-cd ..
+cd ../..
 }
 dependencies_installer(){
 #THIS IS DEF OVERKILL
@@ -183,14 +182,12 @@ apt-get install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixty
 scouter(){
 cd scripts/wifi_tools
 ./scouter
-cd ..
-cd ..
+cd ../..
 }
 ferox(){
 cd scripts/scanning_enumeration
 ./ferox
-cd ..
-cd ..
+cd ../..
 }
 portforward(){
 cd scripts/wifi_tools
