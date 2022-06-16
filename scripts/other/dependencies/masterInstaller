@@ -1,0 +1,29 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' #No color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=5.01
+#END COLORS
+
+scillaInstall=`./ScillaInstall`
+autoReconInstall=`./autoReconInstall`
+
+apt-get update
+
+apt-get upgrade
+
+echo scillaInstall
+printf "\n"
+echo autoReconInstall
+
+apt install mdk3
+
+#apt install wkhtmltopdf
+
+#apt install redis-tools
+
+#apt-get install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb gobuster
