@@ -4,6 +4,7 @@ then
 	printf "Needs to be run as root/sudo user.\n"
 	exit 1;
 fi
+
 #COLORS
 RED='\033[0;31m'
 NC='\033[0m' #No color
@@ -17,118 +18,99 @@ patch=5.01
 nmapipscan(){
 cd scripts/scanning_enumeration
 ./nmapipscan
-cd ..
-cd ..
+cd ../..
 }
 nmapudpscan(){
 cd scripts/scanning_enumeration
 ./nmapudpscan
-cd ..
-cd ..
+cd ../..
 }
 niktowebscan(){
 cd scripts/scanning_enumeration
 ./niktowebscan
-cd ..
-cd ..
+cd ../..
 }
 netscan(){
 cd scripts/wifi_tools
 ./netscan
-cd ..
-cd ..
+cd ../..
 }
 sniffer(){
 cd scripts/wifi_tools
 ./sniffer
-cd ..
-cd ..
+cd ../..
 }
 wifiscan(){
 cd scripts/wifi_tools
 ./wifiscan
-cd ..
-cd ..
+cd ../..
 }
 managedmode(){
 cd scripts/wifi_tools
 ./managedmode
-cd ..
-cd ..
+cd ../..
 }
 usrmsg(){
 cd scripts/other
 ./usrmsg
-cd ..
-cd ..
+cd ../..
 }
 update(){
 cd scripts/other
 ./update
-cd ..
-cd ..
+cd ../..
 }
 updater(){
 cd scripts/other
 ./updater
-cd ..
-cd ..
+cd ../..
 }
 arpscan(){
 cd scripts/wifi_tools
 ./arpscan
-cd ..
-cd ..
+cd ../..
 }
 
 credits(){
 cd scripts/other
 ./credits_msg
-cd ..
-cd ..
+cd ../..
 }
 kaliupgrade_update(){
 cd scripts/other
 ./kaliupgrade_update
-cd ..
-cd ..
+cd ../..
 }
 searchsploit(){
 cd scripts/scanning_enumeration
 ./searchsploit
-cd ..
-cd ..
+cd ../..
 }
 smbclient(){
 cd scripts/exploitation
 ./smbclient
-cd ..
-cd ..
+cd ../..
 }
 gobuster(){
 cd scripts/scanning_enumeration
 ./gobuster
-cd ..
-cd ..
+cd ../..
 }
 deauth(){
 cd scripts/exploitation
 ./deauth
-cd ..
-cd ..
+cd ../..
 }
 massdeauth(){
 cd scripts/exploitation
 ./massdeauth
-cd ..
-cd ..
+cd ../..
 
 }
 monitormode(){
 cd scripts/wifi_tools
 ./monitormode
-cd ..
-cd ..
+cd ../..
 }
 macspoof(){
 cd scripts/anonymity
