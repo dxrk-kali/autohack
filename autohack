@@ -150,16 +150,9 @@ cd scripts/scanning_enumeration
 cd ../..
 }
 dependencies_installer(){
-#THIS IS DEF OVERKILL
-apt-get update
-
-apt-get upgrade
-
-apt install wkhtmltopdf
-
-apt install redis-tools
-
-apt-get install seclists curl enum4linux feroxbuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb gobuster
+cd scripts/other/dependencies
+./masterInstaller
+cd ../../..
 }
 scouter(){
 cd scripts/wifi_tools
