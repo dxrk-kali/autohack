@@ -16,119 +16,119 @@ patch=5.01
 #END COLORS
 
 nmapipscan(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./nmapipscan
 cd ../..
 }
 nmapudpscan(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./nmapudpscan
 cd ../..
 }
 niktowebscan(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./niktowebscan
 cd ../..
 }
 netscan(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./netscan
 cd ../..
 }
 sniffer(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./sniffer
 cd ../..
 }
 wifiscan(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./wifiscan
 cd ../..
 }
 managedmode(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./managedmode
 cd ../..
 }
 usrmsg(){
-cd scripts/other
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 ./usrmsg
 cd ../..
 }
 update(){
-cd scripts/other
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 ./update
 cd ../..
 }
 updater(){
-cd scripts/other
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 ./updater
 cd ../..
 }
 arpscan(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./arpscan
 cd ../..
 }
 
 credits(){
-cd scripts/other
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 ./credits_msg
 cd ../..
 }
 kaliupgrade_update(){
-cd scripts/other
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 ./kaliupgrade_update
 cd ../..
 }
 searchsploit(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./searchsploit
 cd ../..
 }
 smbclient(){
-cd scripts/exploitation
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
 ./smbclient
 cd ../..
 }
 gobuster(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./gobuster
 cd ../..
 }
 deauth(){
-cd scripts/exploitation
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
 ./deauth
 cd ../..
 }
 massdeauth(){
-cd scripts/exploitation
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
 ./massdeauth
 cd ../..
 
 }
 monitormode(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./monitormode
 cd ../..
 }
 macspoof(){
-cd scripts/anonymity
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/anonymity
 ./macspoof
 cd ../..
 }
 smbsigning(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./smbsigning
 cd ../..
 }
 autorecon(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./autorecon
 cd ../..
 }
 wpscan(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./wpscan
 cd ../..
 printf "Enter Target URL ---> "
@@ -145,7 +145,7 @@ else
 fi
 }
 masscan(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./masscan
 cd ../..
 }
@@ -155,24 +155,24 @@ whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/dependencies
 cd ../../..
 }
 scouter(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./scouter
 cd ../..
 }
 ferox(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 ./ferox
 cd ../..
 }
 portforward(){
-cd scripts/wifi_tools
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
 ./portforward
 cd ../..
 }
 scillaDirEnum(){
-cd scripts/scanning_enumeration
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 gnome-terminal --command="bash -c './scillaDir; $SHELL'"
-cd ../..
+cd ../../Results
 }
 
 #-----------------------------------------------------------------------------------------------------
