@@ -4,7 +4,7 @@ To install and use autohack:
 
 1. Clone it | Type: git clone https://github.com/dxrk-kali/autohack.git
 
-2. ./run.sh (ONLY RUN THIS ONCE INITALLY FOR INSTALLATION)
+2. ./run.sh 
 
 3. Done! You can run it from anywhere on your local machine by typing 'autohack' (need to be root to do so)
 
