@@ -7,7 +7,7 @@ YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS 
-shell=`echo $SHELL`
-shtype=`echo .${shell:9}rc` 
-echo PATH=$(pwd):$PATH >> ~/$shtype
-
+#shell=`echo $SHELL`
+#shtype=`echo .${shell:9}rc` 
+#echo PATH=$(pwd):$PATH >> ~/$shtype
+cp autohack /usr/bin
