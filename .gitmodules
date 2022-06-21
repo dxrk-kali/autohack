@@ -5,3 +5,6 @@
 	path = scripts/scanning_enumeration/scilla
 	url = https://github.com/edoardottt/scilla.git
 
+[submodule "scripts/exploitation/social-engineer-toolkit"]
+	path = scripts/exploitation/social-engineer-toolkit
+	url = https://github.com/trustedsec/social-engineer-toolkit.git
