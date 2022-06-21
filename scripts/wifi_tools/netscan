@@ -10,11 +10,7 @@ patch=4.84
 #END COLORS
 echo 'Enter your subnet ---> '
 read subnet
-echo 'Example | 192.168.0.0/24'
-#nmap -sn $subnet
 gnome-terminal --command="bash -c 'nmap -sn $subnet; $SHELL'"
-#working
-#fixed
 clear
 printf "${GREEN}
 -------------------------------------

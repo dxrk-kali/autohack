@@ -10,9 +10,11 @@ patch=4.84
 #END COLORS
 echo '[*] Wlan0 is now in Monitor Mode -----> wlan0mon'
 sleep 1
-gnome-terminal --command="bash -c 'airmon-ng check kill; airmon-ng start wlan0 ;airodump-ng --band abg wlan0mon; $SHELL'" #airodump-ng --band abg wlan0mon
-#working
-#fixed
+
+gnome-terminal --command="bash -c 'iwconfig; $SHELL'" 
+printf "whats the name of your wireless interface in monitor mode?"
+read iface
+gnome-terminal --command="bash -c 'airmon-ng check kill; airmon-ng start wlan0 ;airodump-ng --band abg $iface; $SHELL'" 
 printf "${GREEN}
 -------------------------------------
 [✓] FINISHED SCANNING		 [✓] |

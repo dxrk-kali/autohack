@@ -10,7 +10,7 @@ patch=4.84
 #END COLORS
 whereah=`which autohack`; 
 cd ${whereah::-8}
-printf "Enter Target IP Address ---> "
+printf "${YLLW}Enter Target IP Address ---> "
 read targip
 printf "Name the Directory for the ouput ---> "
 read folder

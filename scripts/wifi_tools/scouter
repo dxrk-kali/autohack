@@ -12,4 +12,6 @@ printf "Enter target BSSID ---> "
 read bssid
 printf "Enter Channel ----> "
 read channel
-gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel wlan0mon; $SHELL'"
+printf "Name of wireless interface ---->"
+read iface
+gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel $iface; $SHELL'"

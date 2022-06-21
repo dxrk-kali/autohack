@@ -8,15 +8,15 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=4.84
 #END COLORS
-echo '[+] Enter target BSSID ---> '
+echo '\n[+] Enter target BSSID ---> '
 read bssid
-echo '[+] Enter the channel # ---> '
+echo '\n[+] Enter the channel # ---> '
 read channel
-echo '[+] Choose a name to save your .cap file ---> '
+echo '\n[+] Choose a name to save your .cap file ---> '
 read filename
-#airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon
-gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel --write $filename wlan0mon; $SHELL'"
-#fixed
+printf "\n[+] Enter the name of your wireless device ---> " 
+read iface
+gnome-terminal --command="bash -c 'airodump-ng --bssid $bssid --channel $channel --write $filename $iface; $SHELL'"
 printf "${GREEN}
 ------------------------------------
 [✓] 	FINISHED SNIFFING	[✓] |

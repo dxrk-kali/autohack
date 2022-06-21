@@ -8,7 +8,7 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=4.84
 #END COLORS
-echo '[+] Please enter your target IP address ---> '
+printf "${YLLW}[+] Please enter your target IP address ---> "
 read targip
 echo '[+] What ports would you like to scan on --->'
 echo '[*] Starting Port ---> '
