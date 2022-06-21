@@ -23,3 +23,7 @@ printf "\n ${GREEN}[✓] AutoRecon Installed [✓]${NC}"
 sleep 2
 apt install mdk3
 printf "\n ${GREEN}[✓] mdk3 Installed [✓]${NC}"
+sleep 2
+./SETinstall
+printf "\n ${GREEN}[✓] SET Installed [✓]${NC}"
+
