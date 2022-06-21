@@ -15,14 +15,10 @@ echo '[*] Starting Port ---> '
 read startport
 echo '[*] End Port ---> '
 read endport
-#nmap -T4 -p$startport-$endport $targip
 gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv -p$startport-$endport $targip; $SHELL'"
-#working
-#fixed
 clear
 printf "${GREEN}
 -------------------------------------
 [✓] FINISHED SCANNING		 [✓] |
 -------------------------------------"
-
 sleep 1
