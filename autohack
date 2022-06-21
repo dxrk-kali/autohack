@@ -179,6 +179,34 @@ whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 gnome-terminal --command="bash -c './scillaPortScan; $SHELL'"
 cd ../..
 }
+allInOnePortScanner(){
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+gnome-terminal --command="bash -c './autohackHeader; ./masscan; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./nmapudpscan; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./autorecon; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./scillaPortScan; $SHELL'" 
+cd ../..
+}
+allInOneWebScanner(){
+scillaDirEnum
+niktowebscan
+gobuster
+ferox 
+}
+autohackHeader(){
+printf "${RED}
+    █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
+   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗	██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
+   ███████║██║   ██║   ██║   ██║   ██║	███████║███████║██║     █████╔╝    
+   ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
+   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
+   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
+   				    v5.01  
+${NC}"
+}
 
 #-----------------------------------------------------------------------------------------------------
 exploitation(){
@@ -263,8 +291,8 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
                                 Scanning/Enumeration                           |                                                
 -------------------------------------------------------------------------------
-1)  Nikto Web Scan (Nikto)               |                                     |
-2)  NMAP Scan (NMAP)                     |                                     |
+1)  Nikto Web Scan (Nikto)               | 11) All in one Scan (6,2,2b,10)     |
+2)  NMAP Scan (NMAP)                     | 12) All in one Web Scan (1,3,8,9)   |
 2a) NMAP UDP Scan (NMAP)	         |				       |
 2b) Masscan All Ports (masscan)          |                                     |
 3)  Gobuster Dir Scan (Gobuster)	 |                                     |
@@ -335,6 +363,14 @@ then
 elif [ $choice == 10 ]
 then
 	scillaPortScanner
+
+elif [ $choice == 11 ]
+then
+	allInOnePortScanner
+
+elif [ $choice == 12 ]
+then
+	allInOneWebScanner
 	
 elif [ $choice == 'back' ]
 then
