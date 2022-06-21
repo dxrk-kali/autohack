@@ -15,7 +15,7 @@ read choice
 
 if [ $choice == 'y' ]
 then
-	printf "Html (1) or txt (2) file?(1/2)"
+	printf "\nHtml (1) or txt (2) file?(1/2) --> "
 	read choice2
 	if [ $choice2 == 1 ]
 	then
@@ -23,10 +23,11 @@ then
 	else
 		filetype="-ot"
 	fi
-	printf "Provide a name for the file: "
+	printf "\nProvide a name for the file: "
 	read filename
-	printf "Enter Domain/Url to spider off of: "
+	printf "\nEnter Domain/Url to spider off of: "
 	read target
+	printf "\nYour results can be found in autohack/results"
 	scilla dir $filetype $filename -target $target
 	
 elif [ $choice == 'n' ]
