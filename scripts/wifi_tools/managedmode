@@ -8,11 +8,11 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=4.84
 #END COLORS
-echo [+] Wlan0 will now be returned to managed mode!
-#airmon-ng stop wlan0mon
-#service NetworkManager restart
-gnome-terminal --command="bash -c 'airmon-ng stop wlan0mon; service NetworkManager restart;$SHELL'"
-#fixed
+echo [+] You wireless interface will now be returned to managed mode!
+gnome-terminal --command="bash -c 'iwconfig;$SHELL'"
+printf "Whats the name of your device in monitor mode? (Use open terminal window provided to answer)"
+read iface
+gnome-terminal --command="bash -c 'airmon-ng stop $iface; service NetworkManager restart;$SHELL'"
 clear
 printf "${GREEN}
 -------------------------------------
