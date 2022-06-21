@@ -172,7 +172,7 @@ cd ../..
 scillaDirEnum(){
 whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 gnome-terminal --command="bash -c './scillaDir; $SHELL'"
-cd ../../Results
+cd ../..
 }
 scillaPortScanner(){
 whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
@@ -191,10 +191,19 @@ gnome-terminal --command="bash -c './autohackHeader;./scillaPortScan; $SHELL'"
 cd ../..
 }
 allInOneWebScanner(){
-scillaDirEnum
-niktowebscan
-gobuster
-ferox 
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+gnome-terminal --command="bash -c './autohackHeader;./niktowebscan; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./gobuster; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./ferox; $SHELL'"
+sleep 1
+gnome-terminal --command="bash -c './autohackHeader;./scillaDir; $SHELL'" 
+}
+SET(){
+whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
+./SET
+cd ../..
 }
 autohackHeader(){
 printf "${RED}
@@ -228,6 +237,7 @@ printf "${YLLW}
 1)  Use SMBClient (smbclient)            |                                     |
 2)  Single Deauth Attack (Aircrack)      |                    	               |
 3)  Mass Deuath Attack (MDK3)	         |				       |
+4)  Launch SET (Social Engineer Toolkit) |
 	 				 |                                     |
    					 |                                     |
                                          |                                     |                
@@ -257,6 +267,10 @@ then
 elif [ $choice == 3 ]
 then
 	massdeauth
+
+elif [ $choice == 4 ]
+then
+	SET
 
 elif [ $choice == 'back' ]
 then
