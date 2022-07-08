@@ -8,10 +8,8 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=5.01
 #END COLORS
-sudo apt install python3-pip
+apt install python3-pip
 
-sudo apt install seclists curl enum4linux feroxbuster gobuster impacket-scripts nbtscan nikto nmap onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
+apt install seclists curl enum4linux feroxbuster gobuster impacket-scripts nbtscan nikto nmap onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf
 
 python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
-
-
