@@ -15,5 +15,5 @@ fi
 shell=`echo $SHELL`
 shtype=`echo .${shell:9}rc` 
 echo PATH=$(pwd):$PATH >> ~/$shtype
-source ~/$shtype
-
+echo "alias ah='autohack'" >> ~/$shtype
+exec autohack
