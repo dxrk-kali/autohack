@@ -8,8 +8,8 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS
 cd ../../scripts/scanning_enumeration/scilla
-apt install gccgo-go 
-apt install golang-go
+apt install gccgo-go -y
+apt install golang-go -y
 go get
 go version
 make linux

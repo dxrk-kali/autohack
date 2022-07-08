@@ -9,9 +9,9 @@ LR='\033[0;31m'
 patch=5.01
 #END COLORS
 
-apt-get update
+apt-get update -y
 
-apt-get upgrade
+apt-get upgrade -y
 whereah=`which autohack`
 cd ${whereah::-8} #in ah folder now
 cd scripts/other/dependencies

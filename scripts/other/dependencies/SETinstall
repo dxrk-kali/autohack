@@ -1,6 +1,6 @@
 #!/bin/bash
 pushd ../../exploitation/social-engineer-toolkit
-apt-install python3-pip
+apt-install python3-pip -y
 pip3 install -r requirements.txt
 python setup.py
 popd
