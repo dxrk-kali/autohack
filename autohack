@@ -16,318 +16,301 @@ patch=5.01
 #END COLORS
 
 nmapipscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./nmapipscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./nmapipscan
+	cd ../..
 }
 nmapudpscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./nmapudpscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./nmapudpscan
+	cd ../..
 }
 niktowebscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./niktowebscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./niktowebscan
+	cd ../..
 }
 netscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./netscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./netscan
+	cd ../..
 }
 sniffer(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./sniffer
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./sniffer
+	cd ../..
 }
 wifiscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./wifiscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./wifiscan
+	cd ../..
 }
 managedmode(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./managedmode
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./managedmode
+	cd ../..
 }
 usrmsg(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
-./usrmsg
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./usrmsg
+	cd ../..
 }
 update(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
-./update
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./update
+	cd ../..
 }
 updater(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
-./updater
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./updater
+	cd ../..
 }
 arpscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./arpscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./arpscan
+	cd ../..
 }
 
 credits(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
-./credits_msg
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./credits_msg
+	cd ../..
 }
 kaliupgrade_update(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
-./kaliupgrade_update
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./kaliupgrade_update
+	cd ../..
 }
 searchsploit(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./searchsploit
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./searchsploit
+	cd ../..
 }
 smbclient(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
-./smbclient
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
+	./smbclient
+	cd ../..
 }
 gobuster(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./gobuster
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./gobuster
+	cd ../..
 }
 deauth(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
-./deauth
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
+	./deauth
+	cd ../..
 }
 massdeauth(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
-./massdeauth
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
+	./massdeauth
+	cd ../..
 
 }
 monitormode(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./monitormode
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./monitormode
+	cd ../..
 }
 macspoof(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/anonymity
-./macspoof
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/anonymity
+	./macspoof
+	cd ../..
 }
 smbsigning(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./smbsigning
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./smbsigning
+	cd ../..
 }
 autorecon(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./autorecon
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./autorecon
+	cd ../..
 }
 wpscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./wpscan
-cd ../..
-printf "Enter Target URL ---> "
-read targurl
-printf "Would you like to save the output to a new text file?(y/n)"
-read choice
-if [ $choice == y ]
-then
-	printf "Name for output file: "
-	read outputfile
-	gnome-terminal --command="bash -c 'wpscan --url $targurl -o $outputfile; $SHELL'"
-else
-	gnome-terminal --command="bash -c 'wpscan --url $targurl --enumerate u,ap,tt,t; $SHELL'"
-fi
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./wpscan
+	cd ../..
+	printf "Enter Target URL ---> "
+	read targurl
+	printf "Would you like to save the output to a new text file?(y/n)"
+	read choice
+	if [ $choice == y ]
+	then
+		printf "Name for output file: "
+		read outputfile
+		gnome-terminal --command="bash -c 'wpscan --url $targurl -o $outputfile; $SHELL'"
+	else
+		gnome-terminal --command="bash -c 'wpscan --url $targurl --enumerate u,ap,tt,t; $SHELL'"
+	fi
 }
 masscan(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./masscan
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./masscan
+	cd ../..
 }
 dependencies_installer(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/dependencies
-./masterInstaller
-cd ../../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/dependencies
+	./masterInstaller
+	cd ../../..
 }
 scouter(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./scouter
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./scouter
+	cd ../..
 }
 ferox(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-./ferox
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	./ferox
+	cd ../..
 }
 portforward(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
-./portforward
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
+	./portforward
+	cd ../..
 }
 scillaDirEnum(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-gnome-terminal --command="bash -c './scillaDir; $SHELL'"
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	gnome-terminal --command="bash -c './scillaDir; $SHELL'"
+	cd ../..
 }
 scillaPortScanner(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-gnome-terminal --command="bash -c './scillaPortScan; $SHELL'"
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	gnome-terminal --command="bash -c './scillaPortScan; $SHELL'"
+	cd ../..
 }
 allInOnePortScanner(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-gnome-terminal --command="bash -c './autohackHeader; ./masscan; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./nmapudpscan; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./autorecon; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./scillaPortScan; $SHELL'" 
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	gnome-terminal --command="bash -c './autohackHeader; ./masscan; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./nmapudpscan; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./autorecon; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./scillaPortScan; $SHELL'" 
+	cd ../..
 }
 allInOneWebScanner(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
-gnome-terminal --command="bash -c './autohackHeader;./niktowebscan; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./gobuster; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./ferox; $SHELL'"
-sleep 1
-gnome-terminal --command="bash -c './autohackHeader;./scillaDir; $SHELL'" 
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
+	gnome-terminal --command="bash -c './autohackHeader;./niktowebscan; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./gobuster; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./ferox; $SHELL'"
+	sleep 1
+	gnome-terminal --command="bash -c './autohackHeader;./scillaDir; $SHELL'" 
 }
 SET(){
-whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
-./SET
-cd ../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation
+	./SET
+	cd ../..
 }
 autohackHeader(){
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗	██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║	███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v$patch 
-${NC}"
+	printf "${RED}
+	█████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
+	██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗	██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
+	███████║██║   ██║   ██║   ██║   ██║	███████║███████║██║     █████╔╝    
+	██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
+	██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
+	╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
+					  v$patch 
+	${NC}"
 }
 
 #-----------------------------------------------------------------------------------------------------
 exploitation(){
 
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                     
-${NC}"
-#OPTIONS START
-printf "${YLLW}
--------------------------------------------------------------------------------
-                               💀 Exploitation 💀                              |                                                
--------------------------------------------------------------------------------
-1)  Use SMBClient (smbclient)            |                                     |
-2)  Single Deauth Attack (Aircrack)      |                    	               |
-3)  Mass Deuath Attack (MDK3)	         |				       |
-4)  Launch SET (Social Engineer Toolkit) |
-	 				 |                                     |
-   					 |                                     |
-                                         |                                     |                
-           MORE SOON!                    |            MORE SOON!               |                
-                                         |                                     |                
--------------------------------------------------------------------------------
-Type 'back' to go return to the main menu
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	autohackHeader
 
- ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
-${NC}"
-#OPTIONS END
-printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
-read choice
+	#OPTIONS START
+	printf "${YLLW} 
+	------------------------------------------------------------------------------- 
+                               💀 Exploitation 💀                              |                                                 
+	------------------------------------------------------------------------------- 
+	1)  Use SMBClient (smbclient)            |                                     | 
+	2)  Single Deauth Attack (Aircrack)      |                    	               | 
+	3)  Mass Deuath Attack (MDK3)	         |				                       | 
+	4)  Launch SET (Social Engineer Toolkit) |                                     | 
+	                                         |                                     |                
+	           MORE SOON!                    |            MORE SOON!               |                
+	                                         |                                     |                
+	------------------------------------------------------------------------------- 
+	Type 'back' to go return to the main menu 
+	Type 'exit' to quit the program  
+	${DG}  
+	Hacking made simple. 
+	
+	 ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿ 
 
-if [ $choice == 1 ]
-then
-        smbclient
-     
-elif [ $choice == 2 ]
-then
-	deauth
-
-elif [ $choice == 3 ]
-then
-	massdeauth
-
-elif [ $choice == 4 ]
-then
-	SET
-
-elif [ $choice == 'back' ]
-then
-	continue
-	clear
-
-elif [ $choice == 'exit' ]
-then
-	exit
-
-
-else
-	clear
-	echo You did not select a valid option.
-	exploitation
-
-fi
+	${NC}"
+	#OPTIONS END
+	read -p "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> " choice
+	
+	if [ $choice == 1 ]
+	then
+	        smbclient
+	     
+	elif [ $choice == 2 ]
+	then
+		deauth
+	
+	elif [ $choice == 3 ]
+	then
+		massdeauth
+	
+	elif [ $choice == 4 ]
+	then
+		SET
+	
+	elif [ $choice == 'back' ]
+	then
+		continue
+		clear
+	
+	elif [ $choice == 'exit' ]
+	then
+		exit
+	
+	
+	else
+		clear
+		echo You did not select a valid option.
+		exploitation
+	
+	fi
 }
 scan_enum(){
 
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                     
-${NC}"
+autohackHeader
+
 #OPTIONS START
 printf "${YLLW}
--------------------------------------------------------------------------------
-                                Scanning/Enumeration                           |                                                
--------------------------------------------------------------------------------
-1)  Nikto Web Scan (Nikto)               | 11) All in one Scan (6,2,2b,10)     |
-2)  NMAP Scan (NMAP)                     | 12) All in one Web Scan (1,3,8,9)   |
-2a) NMAP UDP Scan (NMAP)	         |				       |
-2b) Masscan All Ports (masscan)          |                                     |
-3)  Gobuster Dir Scan (Gobuster)	 |                                     |
-4)  Launch Searchsploit (searchsploit)   |				       |
-5)  SMB Signing checker (NMAP script)    |				       |
-6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
-7)  WPscan a WordPress Site (WPscan)     |                                     |
-8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
-9)  Scilla Dir Enumeration (Scilla)      |                                     |
-10) Scilla Port Scan (Scilla)            |                                     |
-                                         |                                     |                
-           	                         |            MORE SOON!               |                
-                                         |                                     |                
--------------------------------------------------------------------------------
-Type 'back' to go return to the main menu
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	-------------------------------------------------------------------------------
+									Scanning/Enumeration                           |                                                
+	-------------------------------------------------------------------------------
+	1)  Nikto Web Scan (Nikto)               | 11) All in one Scan (6,2,2b,10)     |
+	2)  NMAP Scan (NMAP)                     | 12) All in one Web Scan (1,3,8,9)   |
+	2a) NMAP UDP Scan (NMAP)	         |				       |
+	2b) Masscan All Ports (masscan)          |                                     |
+	3)  Gobuster Dir Scan (Gobuster)	 |                                     |
+	4)  Launch Searchsploit (searchsploit)   |				       |
+	5)  SMB Signing checker (NMAP script)    |				       |
+	6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
+	7)  WPscan a WordPress Site (WPscan)     |                                     |
+	8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
+	9)  Scilla Dir Enumeration (Scilla)      |                                     |
+	10) Scilla Port Scan (Scilla)            |                                     |
+											 |                                     |                
+										 |            MORE SOON!               |                
+											 |                                     |                
+	-------------------------------------------------------------------------------
+	Type 'back' to go return to the main menu
+	Type 'exit' to quit the program 
+	${DG}
+	Hacking made simple.
 
- ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
+	 ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+	 
 ${NC}"
 #OPTIONS END
 printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
@@ -407,15 +390,8 @@ fi
 
 wifi_exploit(){
  
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                      
-${NC}"
+autohackHeader;
+
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
@@ -495,15 +471,8 @@ fi
 
 options(){
 
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                      
-${NC}"
+autohackHeader;
+
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
@@ -560,15 +529,8 @@ fi
 }
 anonymity(){
 
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗   ██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║  ███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║  ██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝  ██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-                                      
-${NC}"
+autohackHeader;
+
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
@@ -616,15 +578,9 @@ fi
 
 
 cli(){
-printf "${RED}
-    █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
-   ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗	██║  ██║██╔══██╗██╔════╝██║ ██╔╝   
-   ███████║██║   ██║   ██║   ██║   ██║	███████║███████║██║     █████╔╝    
-   ██╔══██║██║   ██║   ██║   ██║   ██║	██╔══██║██╔══██║██║     ██╔═██╗    
-   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝	██║  ██║██║  ██║╚██████╗██║  ██╗  
-   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ 	╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ 
-   				    v$patch  
-${NC}"
+
+autohackHeader;
+
 #OPTIONS START
 printf "${YLLW}
 -------------------------------------------------------------------------------
@@ -696,5 +652,3 @@ cli
 
 
 exit
-
- 
