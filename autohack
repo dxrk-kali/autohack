@@ -390,188 +390,188 @@ fi
 
 wifi_exploit(){
  
-autohackHeader;
+	autohackHeader
 
-#OPTIONS START
-printf "${YLLW}
--------------------------------------------------------------------------------
-                                        WiFi                                   |                
--------------------------------------------------------------------------------
-1)  Scan for Hosts (Aircrack)            |                                     |
-1a) Scan for Hosts #2 (Arp)              |				       |
-2)  Scan for WiFi		         |                                     |
-3)  Packet Sniffer (Aircrack)            |                                     |
-4)  Scout a network for hosts (Aircrack) |				       |
-5)  Wifi Card --> Monitor Mode	         |         MORE SOON!                  |                                        
-6)  WiFi Card --> Managed Mode           |                                     |
-7)  Enable Port Forwarding               |                                     |
-                                         |                                     |
-                                         |                                     |
--------------------------------------------------------------------------------
-Type 'back' to return to the main menu
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	#OPTIONS START
+	printf "${YLLW}
+	-------------------------------------------------------------------------------
+											WiFi                                   |                
+	-------------------------------------------------------------------------------
+	1)  Scan for Hosts (Aircrack)            |                                     |
+	1a) Scan for Hosts #2 (Arp)              |				       |
+	2)  Scan for WiFi		         |                                     |
+	3)  Packet Sniffer (Aircrack)            |                                     |
+	4)  Scout a network for hosts (Aircrack) |				       |
+	5)  Wifi Card --> Monitor Mode	         |         MORE SOON!                  |                                        
+	6)  WiFi Card --> Managed Mode           |                                     |
+	7)  Enable Port Forwarding               |                                     |
+											 |                                     |
+											 |                                     |
+	-------------------------------------------------------------------------------
+	Type 'back' to return to the main menu
+	Type 'exit' to quit the program 
+	${DG}
+	Hacking made simple.
 
- ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
-${NC}"
-#OPTIONS END
-printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
-read choice
-if [ $choice == 1 ]
-then
-        netscan
+	   '̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+	 
+	${NC}"
+	#OPTIONS END
+	printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+	read choice
+	if [ $choice == 1 ]
+	then
+			netscan
 
-elif [ $choice == '1a' ]
-then
-        arpscan
+	elif [ $choice == '1a' ]
+	then
+			arpscan
 
-elif [ $choice == 2 ]
-then
-        wifiscan
+	elif [ $choice == 2 ]
+	then
+			wifiscan
 
 
-elif [ $choice == 3 ]
-then
-        sniffer
-        
-elif [ $choice == 4 ]
-then
-        scouter
-        
-        
-elif [ $choice == 5 ]
-then
-        monitormode
-        
-elif [ $choice == 6 ]
-then
-        managedmode
+	elif [ $choice == 3 ]
+	then
+			sniffer
+			
+	elif [ $choice == 4 ]
+	then
+			scouter
+			
+			
+	elif [ $choice == 5 ]
+	then
+			monitormode
+			
+	elif [ $choice == 6 ]
+	then
+			managedmode
 
-elif [ $choice == 7 ]
-then
-        portforward
+	elif [ $choice == 7 ]
+	then
+			portforward
 
-elif [ $choice == 'back' ]
-then
-	continue
-	clear
+	elif [ $choice == 'back' ]
+	then
+		continue
+		clear
 
-elif [ $choice == 'exit' ]
-then
-	exit
+	elif [ $choice == 'exit' ]
+	then
+		exit
 
-else
-	clear
-	echo You did not select a valid option.
-	wifi_exploit
-fi
+	else
+		clear
+		echo You did not select a valid option.
+		wifi_exploit
+	fi
 }
 
 options(){
 
-autohackHeader;
+	autohackHeader
 
-#OPTIONS START
-printf "${YLLW}
--------------------------------------------------------------------------------
-                                       Other                                   |                
--------------------------------------------------------------------------------
-1) Check for Updates                                                           |
-2) Update & Upgrade your Kali OS                                               |
-3) Message to users                                                            |                                        
-4) Credits                                                                     |
-                                                                               |
-                                                                               |
--------------------------------------------------------------------------------
-Type 'back' to return to the main menu
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	#OPTIONS START
+	printf "${YLLW}
+	-------------------------------------------------------------------------------
+										   Other                                   |                
+	-------------------------------------------------------------------------------
+	1) Check for Updates                                                           |
+	2) Update & Upgrade your Kali OS                                               |
+	3) Message to users                                                            |                                        
+	4) Credits                                                                     |
+																				   |
+																				   |
+	-------------------------------------------------------------------------------
+	Type 'back' to return to the main menu
+	Type 'exit' to quit the program 
+	${DG}
+	Hacking made simple.
 
- ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
-${NC}"
-#OPTIONS END
-printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
-read choice
-if [ $choice == 1 ]
-then
-        update
+	   '̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+	 
+	${NC}"
+	#OPTIONS END
+	printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+	read choice
+	if [ $choice == 1 ]
+	then
+			update
 
-elif [ $choice == 2 ]
-then
-        kaliupgrade_update
-elif [ $choice == 3 ]
-then
-        usrmsg
+	elif [ $choice == 2 ]
+	then
+			kaliupgrade_update
+	elif [ $choice == 3 ]
+	then
+			usrmsg
 
-elif [ $choice == 4 ]
-then
-        credits
+	elif [ $choice == 4 ]
+	then
+			credits
 
-elif [ $choice == 'back' ]
-then
-	continue
-	clear
+	elif [ $choice == 'back' ]
+	then
+		continue
+		clear
 
-elif [ $choice == 'exit' ]
-then
-        exit
+	elif [ $choice == 'exit' ]
+	then
+			exit
 
-else
-	clear
-        echo You did not select a valid option.
-        options
-fi
+	else
+		clear
+			echo You did not select a valid option.
+			options
+	fi
 
 }
 anonymity(){
 
-autohackHeader;
+	autohackHeader
 
-#OPTIONS START
-printf "${YLLW}
--------------------------------------------------------------------------------
-                                       Anonymity                               |                
--------------------------------------------------------------------------------
-1) Spoof your MAC Address                                                      |
-                                                                               |
-                                                                               |                                        
-                                                                               |
-                                                                               |
-                                                                               |
--------------------------------------------------------------------------------
-Type 'back' to return to the main menu
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	#OPTIONS START
+	printf "${YLLW}
+	-------------------------------------------------------------------------------
+										   Anonymity                               |                
+	-------------------------------------------------------------------------------
+	1) Spoof your MAC Address                                                      |
+																				   |
+																				   |                                        
+																				   |
+																				   |
+																				   |
+	-------------------------------------------------------------------------------
+	Type 'back' to return to the main menu
+	Type 'exit' to quit the program 
+	${DG}
+	Hacking made simple.
 
- ̿̿ ̿̿ ̿'̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
-${NC}"
-#OPTIONS END
-printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
-read choice
-if [ $choice == 1 ]
-then
-        macspoof
-        
-elif [ $choice == 'back' ]
-then
-	continue
-	clear
+	   '̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+	 
+	${NC}"
+	#OPTIONS END
+	printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+	read choice
+	if [ $choice == 1 ]
+	then
+			macspoof
+			
+	elif [ $choice == 'back' ]
+	then
+		continue
+		clear
 
-elif [ $choice == 'exit' ]
-then
-        exit
+	elif [ $choice == 'exit' ]
+	then
+			exit
 
-else
-	clear
-        echo You did not select a valid option.
-        options
-fi
+	else
+		clear
+			echo You did not select a valid option.
+			options
+	fi
 
 }
 
@@ -579,76 +579,74 @@ fi
 
 cli(){
 
-autohackHeader;
+	autohackHeader
 
-#OPTIONS START
-printf "${YLLW}
--------------------------------------------------------------------------------
-                                       Menu 	                               |						
--------------------------------------------------------------------------------
-1)  Scanning & Enumeration tools                                               |                                     
-2)  WiFi tools								       |
-3)  Exploitation                                                               |
-4)  Anonymity                                                                  |                                     
-5)  Other                                                                      |
-6)  Install Dependencies                                                       |
-                                                                               |
-                                                                               |                                 
--------------------------------------------------------------------------------
-Type 'exit' to quit the program 
-${DG}
-Hacking made simple.
+	#OPTIONS START
+	printf "${YLLW}
+	-------------------------------------------------------------------------------
+										   Menu 	                               |						
+	-------------------------------------------------------------------------------
+	1)  Scanning & Enumeration tools                                               |                                     
+	2)  WiFi tools								       |
+	3)  Exploitation                                                               |
+	4)  Anonymity                                                                  |                                     
+	5)  Other                                                                      |
+	6)  Install Dependencies                                                       |
+																				   |
+																				   |                                 
+	-------------------------------------------------------------------------------
+	Type 'exit' to quit the program 
+	${DG}
+	Hacking made simple.
 
- ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
- 
-${NC}"
-#OPTIONS END
-printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
-read choice
-if [ $choice == 1 ]  
-then
-	clear
-	scan_enum
+	   '̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
+	 
+	${NC}"
+	#OPTIONS END
+	printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
+	read choice
+	if [ $choice == 1 ]  
+	then
+		clear
+		scan_enum
 
-elif [ $choice == 2 ] 
-then
-	clear
-	wifi_exploit
+	elif [ $choice == 2 ] 
+	then
+		clear
+		wifi_exploit
 
-elif [ $choice == 3 ] 
-then
-	clear
-	exploitation
-elif [ $choice == 4 ] 
-then
-	clear
-	anonymity
+	elif [ $choice == 3 ] 
+	then
+		clear
+		exploitation
+	elif [ $choice == 4 ] 
+	then
+		clear
+		anonymity
 
-elif [ $choice == 5 ] 
-then
-	clear
-	options
-	
-elif [ $choice == 6 ] 
-then
-	clear
-	dependencies_installer
+	elif [ $choice == 5 ] 
+	then
+		clear
+		options
+		
+	elif [ $choice == 6 ] 
+	then
+		clear
+		dependencies_installer
 
 
-elif [ $choice == 'exit' ]
-then
-	exit
+	elif [ $choice == 'exit' ]
+	then
+		exit
 
-else
-	clear
-	echo You did not select a valid option.
+	else
+		clear
+		echo You did not select a valid option.
+		cli
+	fi
 	cli
-fi
-cli
 }
 
 cli
 
-
-
-exit
+exit 0;
