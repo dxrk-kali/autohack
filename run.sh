@@ -12,8 +12,8 @@ then
 	printf "Needs to be run as root/sudo user.\n"
 	exit 1;
 fi
-shell=`echo $SHELL`
-shtype=`echo .${shell:9}rc` 
+shell=`echo $SHELL | awk -F '/' '{print $(NF)}'`
+shtype=`echo .${shell}rc` 
 echo PATH=$(pwd):$PATH >> ~/$shtype
 echo "alias ah='autohack'" >> ~/$shtype
 exec autohack
