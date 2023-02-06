@@ -4,3 +4,6 @@
 [submodule "scripts/exploitation/social-engineer-toolkit"]
 	path = scripts/exploitation/social-engineer-toolkit
 	url = https://github.com/trustedsec/social-engineer-toolkit.git
+[submodule "scripts/scanning_enumeration/xsstrike"]
+	path = scripts/scanning_enumeration/xsstrike
+	url = https://github.com/s0md3v/XSStrike.git
