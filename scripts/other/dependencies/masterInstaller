@@ -26,4 +26,6 @@ printf "\n ${GREEN}[✓] mdk3 Installed [✓]${NC}"
 sleep 2
 ./SETinstall
 printf "\n ${GREEN}[✓] SET Installed [✓]${NC}"
-
+./xsstrikeInstall
+sleep 2
+printf "\n ${GREEN}[✓] xsstrike Installed [✓]${NC}"
