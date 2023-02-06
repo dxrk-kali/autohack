@@ -210,6 +210,11 @@ reverseShellGen(){
 	gnome-terminal --command="bash -c './autohackHeader;./reverseShellGen; $SHELL'"
 	cd ../..
 }
+xsstrike(){
+	
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./xsstrikeTarget; $SHELL'"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -301,7 +306,7 @@ printf "${YLLW}
 -------------------------------------------------------------------------------
 1)  Nikto Web Scan (Nikto)               | 11) All in one Scan (6,2,2b,10)     |
 2)  NMAP Scan (NMAP)                     | 12) All in one Web Scan (1,3,8,9)   |
-2a) NMAP UDP Scan (NMAP)	         |				       |
+2a) NMAP UDP Scan (NMAP)	         | 13) Check for XSS vulns (xsstrike)  |				     
 2b) Masscan All Ports (masscan)          |                                     |
 3)  Gobuster Dir Scan (Gobuster)	 |                                     |
 4)  Launch Searchsploit (searchsploit)   |				       |
@@ -379,7 +384,11 @@ then
 elif [ $choice == 12 ]
 then
 	allInOneWebScanner
-	
+
+elif [ $choice == 13 ]
+then
+	xsstrike
+
 elif [ $choice == 'back' ]
 then
 	continue
