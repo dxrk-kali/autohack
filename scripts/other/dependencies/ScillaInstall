@@ -7,12 +7,11 @@ YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS
-cd ../../scripts/scanning_enumeration/scilla
+echo "Checking for Go (Needed for installation) ... "
 apt install gccgo-go -y
 apt install golang-go -y
 go get
 go version
+echo "Go is installed and good to go! Now time for the make file ... "
+cd ../../scanning_enumeration/scilla
 make linux
-
-
-

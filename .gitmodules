@@ -1,0 +1,3 @@
+[submodule "scripts/scanning_enumeration/scilla"]
+	path = scripts/scanning_enumeration/scilla
+	url = https://github.com/edoardottt/scilla.git
