@@ -1,3 +1,5 @@
+<b>Installation and Setup</b>
+
 Hey new autohack users, hope you enjoy it!
 
 To install and use autohack:
