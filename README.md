@@ -1,3 +1,5 @@
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=dxrk-kali.visitor-badge&left_color=blue&right_color=green) 
+
 <b>Installation and Setup</b>
 
 Hey new autohack users, hope you enjoy it!
@@ -14,7 +16,8 @@ Hope everyone enjoys the concept of this project. I plan to see how many people 
 
 Hack on!
 
-- dxrk 
+- dxrk
+
 
 
 
