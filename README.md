@@ -1,5 +1,4 @@
 ![visitor badge](https://visitor-badge.glitch.me/badge?page_id=dxrk-kali.visitor-badge&left_color=blue&right_color=green) 
-
 # Installation and Setup
 
 Hey new autohack users, hope you enjoy it!
