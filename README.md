@@ -26,4 +26,6 @@ Hack on!
 
 It is highly advised you use kali linux as most of the scripting and development of this tool is under the assumption it is installed on kali.
 
+## Roadmap
 
+Autohack is in it's baby stage still. I am a uni student and i work an internship, but I plan to acivtely start dedicating much more of my free time to push it to it's fullest potential. I first want to script much more functionality into the tool, organize it and clean up the look, this part may take a while as I want autohack to be the framework one would start up to start their ctf challenge, bug bounty, etc. Once I am happy with the core functionality of autohack I plan to create autohackOS, which will be a kali based custom OS with a fresh look and autohack natively installed and ready to go. This is a very generalized roadmap, if you are interested in the specifics of what is coming to autohack, please check the [projects board](https://github.com/dxrk-kali/autohack/projects/1). So if you like autohack now just wait for the future, and please, report any bugs or submit ideas/things you want to see in autohack!
