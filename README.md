@@ -23,7 +23,7 @@ Hack on!
 
 - dxrk
 
-## Disclaimer
+## Disclaimers
 
 It is highly advised you use kali linux as most of the scripting and development of this tool is under the assumption it is installed on kali.
 
