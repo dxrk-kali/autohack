@@ -15,7 +15,7 @@ To install and use autohack:
 
 3. Done! You can run it from anywhere on your machine by typing `autohack` or `ah`! Enjoy!
 
-**It is reccommended you run this tool as root.**
+**It is reccommended you run this tool as root. If you type `sudo ./autohack` this will result in a bug. Instead switch to your root user first. You can read more on the bug below and why autohack behaves this way.**
 
 Hope everyone enjoys the concept of this project. I plan to see how many people like and enjoy the script and I plan to develop it everyday and add new functionality. Please report any and all bugs/issues/ideas to the [Discussions](https://github.com/dxrk-kali/autohack/discussions) / [Issues](https://github.com/dxrk-kali/autohack/issues) board.
 
@@ -26,6 +26,8 @@ Hack on!
 ## Disclaimer
 
 It is highly advised you use kali linux as most of the scripting and development of this tool is under the assumption it is installed on kali.
+
+The `sudo ./autohack bug`: Autohack uses bash string manipulation to figure out where the user installed the repo. At runtime it needs to look for files in the repo to call, if the wrong user environment is used (as is the case with `sudo ./autohack`) it will create a `substring is < 0` bug because it can't find autohack because that current user environment does not have autohack in their path. This is one reason why running the tool as root instead of a suoder is reccommended.
 
 ## Roadmap
 
