@@ -29,7 +29,7 @@ then
 	printf "${GREEN}Starting up ffuf ... \n"
 	printf "Get Ready (◕‿◕)\n"
 	sleep 2
-	ffuf -w $notDefaultList":FUZZ" -u $url"FUZZ.$ext"
+	ffuf -w $notDefaultList":FUZZ" -u $url"FUZZ" -e "$ext"
 else
 	printf "you did not enter a valid option\n"
 	printf "resetting this module in 3 seconds ...\n"
