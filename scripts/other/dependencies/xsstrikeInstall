@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+pushd ../../scanning_enumeration/xsstrike
+pip install -r requirements.txt
+popd
