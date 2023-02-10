@@ -13,7 +13,7 @@ printf "${YLLW}Enter a url to fuzz (With a / at the end, provide the FULL url, o
 read url
 printf "Would you like to use the defalut wordlist? y/n: "
 read list
-printf "What file ext would you like to fuzz? (php,html,xml etc): \n"
+printf "What file ext would you like to fuzz? (.php,.html,.xml etc): \n"
 read ext
 if [[ $list == 'y' ]] || [[ $list == 'Y' ]]
 then
@@ -21,7 +21,7 @@ then
 	printf "${GREEN}Starting up ffuf ... \n"
 	printf "Get Ready (◕‿◕)\n"
 	sleep 1
-	ffuf -w $path":FUZZ" -u $url"FUZZ.$ext"
+	ffuf -w $path":FUZZ" -u $url"FUZZ" -e "$ext"
 elif [[ $list == 'n' ]] || [[ $list == 'N' ]]
 then
 	printf "Please enter the absolute path to the wordlist of your choice: \n"
