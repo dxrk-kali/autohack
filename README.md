@@ -27,7 +27,7 @@ Hack on!
 
 It is highly advised you use kali linux as most of the scripting and development of this tool is under the assumption it is installed on kali.
 
-The `sudo ./autohack bug`: Autohack uses bash string manipulation to figure out where the user installed the repo. At runtime it needs to look for files in the repo to call, if the wrong user environment is used (as is the case with `sudo ./autohack`) it will create a `substring is < 0` bug because it can't find autohack because that current user environment does not have autohack in their path. This is one reason why running the tool as root instead of a suoder is reccommended.
+The `sudo ./autohack` bug: Autohack uses bash string manipulation to figure out where the user installed the repo. At runtime it needs to look for files in the repo to call, if the wrong user environment is used (as is the case with `sudo ./autohack`) it will create a `substring is < 0` bug because it can't find autohack because that current user environment does not have autohack in their path. This is one reason why running the tool as root instead of a suoder is reccommended.
 
 ## Roadmap
 
