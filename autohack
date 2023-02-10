@@ -221,6 +221,10 @@ ffufScanner(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufFuzz; $SHELL'"
 }
+ffufExtScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufExtScan; $SHELL'"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -314,7 +318,7 @@ printf "${YLLW}
 2)  NMAP Scan (NMAP)                     | 12) All in one Web Scan (1,3,8,9,14)|
 2a) NMAP UDP Scan (NMAP)	         | 13) Check for XSS vulns (xsstrike)  |				     
 2b) Masscan All Ports (masscan)          | 14) Fuzz for dirs (ffuf)            |
-3)  Gobuster Dir Scan (Gobuster)	 |                                     |
+3)  Gobuster Dir Scan (Gobuster)	 | 15) Fuzz for Web Ext's (ffuf)       |
 4)  Launch Searchsploit (searchsploit)   |				       |
 5)  SMB Signing checker (NMAP script)    |				       |
 6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
@@ -398,6 +402,10 @@ then
 elif [ $choice == 14 ]
 then
 	ffufScanner
+
+elif [ $choice == 15 ]
+then
+	ffufExtScan
 
 elif [ $choice == 'back' ]
 then

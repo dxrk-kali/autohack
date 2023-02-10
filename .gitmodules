@@ -7,3 +7,6 @@
 [submodule "scripts/scanning_enumeration/xsstrike"]
 	path = scripts/scanning_enumeration/xsstrike
 	url = https://github.com/s0md3v/XSStrike.git
+[submodule "scripts/scanning_enumeration/AutoRecon"]
+	path = scripts/scanning_enumeration/AutoRecon
+	url = https://github.com/Tib3rius/AutoRecon.git

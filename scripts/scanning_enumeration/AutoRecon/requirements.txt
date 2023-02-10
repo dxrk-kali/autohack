@@ -1,4 +1,0 @@
-appdirs
-colorama
-toml
-unidecode

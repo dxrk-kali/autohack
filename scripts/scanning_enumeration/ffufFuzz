@@ -8,6 +8,7 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS
 #ready for prod
+printf "${GREEN}Autohack now hosts lots of the common wordlists provided by Seclists under the scripts/scanning_enumeration/wordlists directory! ${NC}\n"
 printf "${YLLW}Enter a url to fuzz (With a / at the end, provide the FULL url, otherwise ffuf wont work. Ex: http://10.10.10.10:8080/): \n"
 read url
 printf "Would you like to use the defalut wordlist? y/n: "
