@@ -19,20 +19,20 @@ read path
 if [ $path == 1 ]
 then
 #fix it so in the condtional statements it calls the direct path instead of chaning path param
-	gnome-terminal --command="bash -c 'feroxbuster --wordlist  /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --url $targip;$SHELL'"
+	gnome-terminal --command="bash -c 'feroxbuster --wordlist  wordlists/directory-list-2.3-medium.txt --url $targip;$SHELL'"
 	exit
 elif [ $path == 2 ]
 then
 
-	gnome-terminal --command="bash -c 'feroxbuster --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt --url $targip;$SHELL'"
+	gnome-terminal --command="bash -c 'feroxbuster --wordlist wordlists/directory-list-2.3-small.txt --url $targip;$SHELL'"
 	exit
 elif [ $path == 3 ]
 then
-	gnome-terminal --command="bash -c 'feroxbuster --wordlist /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt --url $targip;$SHELL'"
+	gnome-terminal --command="bash -c 'feroxbuster --wordlist wordlists/directory-list-lowercase-2.3-medium.txt --url $targip;$SHELL'"
 	exit
 elif [ $path == 4 ]
 then
-	gnome-terminal --command="bash -c 'feroxbuster --wordlist /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt --url $targip;$SHELL'"
+	gnome-terminal --command="bash -c 'feroxbuster --wordlist wordlists/directory-list-lowercase-2.3-small.txt --url $targip;$SHELL'"
 	exit
 else
 	printf 'Invalid option selected\n'

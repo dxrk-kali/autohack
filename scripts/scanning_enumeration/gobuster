@@ -19,19 +19,19 @@ printf "Choose a Wordlist from /usr/share/wordlists/dirbuster/:
 read choice
 if [ $choice == 1 ]
 then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt'
+	wordlist='wordlists/directory-list-2.3-small.txt'
 	
 elif [ $choice == 2 ]
 then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt'	
+	wordlist='wordlists/directory-list-2.3-medium.txt'	
 	
 elif [ $choice == 3 ]
 then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt'
+	wordlist='wordlists/directory-list-lowercase-2.3-small.txt'
 	
 elif [ $choice == 4 ]
 then
-	wordlist='/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt'
+	wordlist='wordlists/directory-list-lowercase-2.3-medium.txt'
 else
 	echo 'You did not enter a valid parameter!'
 	gobuster
