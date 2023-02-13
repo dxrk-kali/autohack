@@ -1,0 +1,40 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+#END COLORS
+#ready for prod
+printf "${GREEN}Autohack now hosts lots of the common wordlists provided by Seclists under the scripts/scanning_enumeration/wordlists directory! ${NC}\n"
+printf "${YLLW}Enter the url you want to scan vhosts for (Add port if applicable, Ex: http://academy.htb:PORT/ , if there is no port associated then dont put anything after the url, which would look something like http://website.com/) \n"
+read url
+printf "Enter the host for this url (Ex: if you wanted to scan http://academy.htb/ , you would enter academy.htb here as that is the hostname that DNS would resolve. This host should match what is entered in your /etc/hosts file.): \n"
+read host
+printf "Would you like to use the defalut wordlist? y/n: "
+read list
+
+if [[ $list == 'y' ]] || [[ $list == 'Y' ]]
+then
+	path="dns/subdomains-top1million-110000.txt"
+	printf "${GREEN}Starting up ffuf ... \n"
+	printf "Get Ready (◕‿◕)\n"
+	sleep 2
+	ffuf -w $path":FUZZ" -u $url -H "Host: FUZZ.$host" -ms 0
+elif [[ $list == 'n' ]] || [[ $list == 'N' ]]
+then
+	printf "Please enter the absolute path to the wordlist of your choice: \n"
+	read notDefaultList
+	printf "${GREEN}Starting up ffuf ... \n"
+	printf "Get Ready (◕‿◕)\n"
+	sleep 2
+	ffuf -w $path":FUZZ" -u $url -H "Host: FUZZ.$host" -ms 0
+else
+	printf "you did not enter a valid option\n"
+	printf "resetting this module in 3 seconds ...\n"
+	sleep 3
+	clear
+	./ffufFuzz	
+fi
