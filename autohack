@@ -229,6 +229,10 @@ ffufFileExtScan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufFileExtScan; $SHELL'"
 }
+ffufSubScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufSubScan; $SHELL'"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -324,7 +328,7 @@ printf "${YLLW}
 2b) Masscan All Ports (masscan)          | 14) Fuzz for dirs (ffuf)            |
 3)  Gobuster Dir Scan (Gobuster)	 | 15) Fuzz for Web Ext's (ffuf)       |
 4)  Launch Searchsploit (searchsploit)   | 16) Fuzz for File Ext's (ffuf)      |
-5)  SMB Signing checker (NMAP script)    |				       |
+5)  SMB Signing checker (NMAP script)    | 17) Fuzz for Subdomains (ffuf)      |			       
 6)  AutoRecon Scan a Target (AutoRecon)  |                                     |
 7)  WPscan a WordPress Site (WPscan)     |                                     |
 8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
@@ -414,6 +418,10 @@ then
 elif [ $choice == 16 ]
 then
 	ffufFileExtScan
+
+elif [ $choice == 17 ]
+then
+	ffufSubScan
 
 elif [ $choice == 'back' ]
 then
