@@ -237,6 +237,10 @@ ffufVhostScan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufVhostScan; $SHELL'"
 }
+ffufRecursiveScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufRecursiveScan; $SHELL'"
+}
 
 autohackHeader(){
 	printf "${RED}
@@ -335,7 +339,7 @@ printf "${YLLW}
 4)  Launch Searchsploit (searchsploit)   | 16) Fuzz for File Ext's (ffuf)      |
 5)  SMB Signing checker (NMAP script)    | 17) Fuzz for Subdomains (ffuf)      |			       
 6)  AutoRecon Scan a Target (AutoRecon)  | 18) Fuzz for Vhosts (ffuf)          |
-7)  WPscan a WordPress Site (WPscan)     |                                     |
+7)  WPscan a WordPress Site (WPscan)     | 19) Recurisvely Fuzz for Dirs (ffuf)|
 8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
 9)  Scilla Dir Enumeration (Scilla)      |                                     |
 10) Scilla Port Scan (Scilla)            |                                     |
@@ -431,6 +435,10 @@ then
 elif [ $choice == 18 ]
 then
 	ffufVhostScan
+
+elif [ $choice == 19 ]
+then
+	ffufRecursiveScan
 
 elif [ $choice == 'back' ]
 then
