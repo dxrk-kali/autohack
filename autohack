@@ -241,7 +241,14 @@ ffufRecursiveScan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufRecursiveScan; $SHELL'"
 }
-
+ffufPostScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufPost; $SHELL'"
+}
+ffufGetScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufGet; $SHELL'"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -340,8 +347,8 @@ printf "${YLLW}
 5)  SMB Signing checker (NMAP script)    | 17) Fuzz for Subdomains (ffuf)      |			       
 6)  AutoRecon Scan a Target (AutoRecon)  | 18) Fuzz for Vhosts (ffuf)          |
 7)  WPscan a WordPress Site (WPscan)     | 19) Recurisvely Fuzz for Dirs (ffuf)|
-8)  Feroxbuster Dir Scan (Feroxbuster)   |                                     |
-9)  Scilla Dir Enumeration (Scilla)      |                                     |
+8)  Feroxbuster Dir Scan (Feroxbuster)   | 20) GET Param Scan (ffuf)           |
+9)  Scilla Dir Enumeration (Scilla)      | 21) POST Param Scan (ffuf)          |
 10) Scilla Port Scan (Scilla)            |                                     |
 					 |                                     |                
 					 |            MORE SOON!               |                
@@ -439,6 +446,14 @@ then
 elif [ $choice == 19 ]
 then
 	ffufRecursiveScan
+
+elif [ $choice == 20 ]
+then
+	ffufPostScan
+
+elif [ $choice == 21 ]
+then
+	ffufGetScan
 
 elif [ $choice == 'back' ]
 then
