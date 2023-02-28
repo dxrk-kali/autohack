@@ -1,0 +1,5 @@
+#!/bin/bash
+printf "Please enter the URL to fuzz: \n"
+read url
+printf "DISCLAIMER: This module will be interactive, the initial scan will show a BUNCH of false positives, what you need to do is look at the size number of all of the false positive results and then filter that number out \n EX: If I ran this scan against a url and the size of the response was 798 for all of them, then I would hit the enter key, which will put ffuf into interactive mode. Once it's in interactive mode you will want to type <fs> <size_u_want_to_filter_out> and then type <restart> (All without the angle brackets). This will restart your ffuf scan with the correct size filtering for you and return true positives. \n"
+ffuf -w wordlists/burp-parameter-names.txt:FUZZ -u $url -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' 
