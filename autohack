@@ -249,6 +249,10 @@ ffufGetScan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufGet; $SHELL'"
 }
+ffufValueScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal --command="bash -c './autohackHeader;./ffufValueScan; $SHELL'"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -349,7 +353,7 @@ printf "${YLLW}
 7)  WPscan a WordPress Site (WPscan)     | 19) Recurisvely Fuzz for Dirs (ffuf)|
 8)  Feroxbuster Dir Scan (Feroxbuster)   | 20) GET Param Scan (ffuf)           |
 9)  Scilla Dir Enumeration (Scilla)      | 21) POST Param Scan (ffuf)          |
-10) Scilla Port Scan (Scilla)            |                                     |
+10) Scilla Port Scan (Scilla)            | 22) Value Fuzz (ffuf)               |
 					 |                                     |                
 					 |            MORE SOON!               |                
 					 |                                     |                
@@ -454,6 +458,10 @@ then
 elif [ $choice == 21 ]
 then
 	ffufGetScan
+
+elif [ $choice == 22 ]
+then
+	ffufValueScan
 
 elif [ $choice == 'back' ]
 then

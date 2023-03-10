@@ -7,3 +7,23 @@ YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m'
 #END COLORS
+printf "${GREEN}Autohack now hosts lots of the common wordlists provided by Seclists under the scripts/scanning_enumeration/wordlists directory! Feel free to check these directories out to find the wordlist you want to use for this module. ${NC}\n"
+printf "${YLLW}Enter a url to fuzz (With a / at the end, provide the FULL url, otherwise ffuf wont work. Ex: http://10.10.10.10:8080/): \n"
+read url
+printf "Please enter the absolute path to the wordlist of your choice: \n"
+read wordlist
+printf "Please enter whether this is a GET/POST parameter type (Enter either GET or POST): \n"
+read type_req
+printf "Enter the name of the parameter to value fuzz: \n"
+read name
+printf "Reminder: You will need to filter out the incorrect filter size when the scan starts, press enter while ffuf is running to enter interactive mode. Then type fs <whatever filter size u need to filter out> and then type restart and it will re run the current ffuf job and filter out the bogus ffuf responses, leaving you only with the valid responses. Enter 1 to continue: \n"
+read inp
+if [ $inp == 1  ]
+then
+	printf "${GREEN}Starting up ffuf ... \n"
+	printf "Get Ready (◕‿◕)\n"
+	sleep 2
+	ffuf -w $wordlist:FUZZ -u $url -X $type_req -d "$name=FUZZ" -H 'Content-Type: application/x-www-form-urlencoded'
+else
+	./ffufValueScan
+fi
