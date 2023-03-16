@@ -453,11 +453,11 @@ then
 
 elif [ $choice == 20 ]
 then
-	ffufPostScan
+	ffufGetScan
 
 elif [ $choice == 21 ]
 then
-	ffufGetScan
+	ffufPostScan
 
 elif [ $choice == 22 ]
 then
