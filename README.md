@@ -1,7 +1,5 @@
 ![last commit](https://img.shields.io/github/last-commit/dxrk-kali/autohack)
 
-These badges were just added as of 2/7/23 so the visitor badge is quite behind.
-If the visitor badge is down/broken it is most likely because the website it is linked to either restarted or went down temporarily.
 # Installation and Setup
 
 Hey new autohack users, hope you enjoy it!
