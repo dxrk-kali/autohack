@@ -1,4 +1,3 @@
-![visitor badge](https://visitor-badge.glitch.me/badge?page_id=dxrk-kali.visitor-badge&left_color=blue&right_color=green) 
 ![last commit](https://img.shields.io/github/last-commit/dxrk-kali/autohack)
 
 These badges were just added as of 2/7/23 so the visitor badge is quite behind.
