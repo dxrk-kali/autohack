@@ -1,2 +1,3 @@
 *.state
 results/*
+scripts/scanning_enumeration/AutoRecon
