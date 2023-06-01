@@ -8,7 +8,7 @@ To install and use autohack:
 
 1. Clone it | Type: `git clone --recursive  https://github.com/dxrk-kali/autohack.git`
 
-2. `./run.sh` This script will simply add autohack as an alias so you can execute it from anywhere on your machine, you need to be root to run this script. (You only need to run this file once for installation) 
+2. `./run.sh` This script will simply add autohack as an alias so you can execute it from anywhere on your machine, you need to be root to run this script. Next, you need to source these changes, so close your terminal and reopen, and it should work. (You only need to run this file once for installation) 
 
 3. Done! You can run it from anywhere on your machine by typing `autohack` or `ah`! Enjoy!
 
