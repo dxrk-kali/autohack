@@ -15,7 +15,7 @@ echo '[*] Starting Port ---> '
 read startport
 echo '[*] End Port ---> '
 read endport
-gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv -p$startport-$endport $targip; $SHELL'"
+gnome-terminal --command="bash -c 'nmap -T4 -A -sC -vv --script vuln -p$startport-$endport $targip; $SHELL'"
 clear
 printf "${GREEN}
 -------------------------------------
