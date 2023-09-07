@@ -22,7 +22,7 @@ case $1 in
         echo "dirbusting ..."
         ;;
     help)
-        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap."
+        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail."
         ;;
     *)
 	echo "Unknown argument(s): $@"
