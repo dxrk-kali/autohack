@@ -14,7 +14,18 @@ DG='\033[0;37m'
 LR='\033[0;31m'
 patch=5.01
 #END COLORS
-
+############################################  CLI CODE SECTION ##########################
+argscanner(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	./argScanner $@
+	cd ../..
+}
+if [ $# -gt 0 ]; then
+	argscanner $@
+	exit 0
+fi
+	
+##########################################  CLI CODE END ###############################
 nmapipscan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration
 	./nmapipscan
