@@ -1,0 +1,32 @@
+#!/bin/bash
+# COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m' 
+# END COLORS
+
+case $1 in
+    enum)
+        printf "${YLLW}[*] Performing Enumeration Scan ...${NC}\n"
+	out=$(nmap $2)
+	echo "$out"
+	printf "${YLLW}\n[+] Enter Port #'s to scan further (EG: 80,22,8080): ${NC}\n"
+	read ports
+	printf "${YLLW}\n[*] Performing Detailed Scan ... ${NC}\n"
+	nmap -sV -sC -O -T4 -p$ports $2
+        ;;
+    dirb)
+        echo "dirbusting ..."
+        ;;
+    help)
+        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap."
+        ;;
+    *)
+	echo "Unknown argument(s): $@"
+	printf "ah help for more info on how to use AutoHack CLI."
+        ;;
+esac
+
