@@ -264,6 +264,10 @@ ffufValueScan(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal --command="bash -c './autohackHeader;./ffufValueScan; $SHELL'"
 }
+cmeSMBgui(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal -- bash -c "./autohackHeader;./cmeSMB; exec bash"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -365,7 +369,7 @@ printf "${YLLW}
 8)  Feroxbuster Dir Scan (Feroxbuster)   | 20) GET Param Scan (ffuf)           |
 9)  Scilla Dir Enumeration (Scilla)      | 21) POST Param Scan (ffuf)          |
 10) Scilla Port Scan (Scilla)            | 22) Value Fuzz (ffuf)               |
-					 |                                     |                
+					 | 23) Scan a Host for SMB info (CME)  |                
 					 |            MORE SOON!               |                
 					 |                                     |                
 -------------------------------------------------------------------------------
@@ -473,6 +477,10 @@ then
 elif [ $choice == 22 ]
 then
 	ffufValueScan
+	
+elif [ $choice == 23 ]
+then
+	cmeSMBgui
 
 elif [ $choice == 'back' ]
 then
