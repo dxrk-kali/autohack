@@ -1,0 +1,14 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+#
+#GUI script, takes ip as input, runs cme to scan for smb domain info
+read -p "[+] Enter IP: " -r ip
+crackmapexec smb $ip
