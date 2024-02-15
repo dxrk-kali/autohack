@@ -22,7 +22,7 @@ case $1 in
         echo "dirbusting ..."
         ;;
     help)
-        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail."
+        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail.\nsmb <host ip> - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools."
         ;;
     smb)
 	printf "${YLLW}[*] Performing SMB Enumeration utilizing CME and enum4linux ...${NC}\n"
