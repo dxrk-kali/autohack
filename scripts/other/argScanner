@@ -19,8 +19,8 @@ case $1 in
 	nmap -sV -sC -O -T4 -p$ports $2
         ;;
     dirb)
-        echo "dirbusting ..."
-        ;;
+        gnome-terminal -- bash -c "dirb $2; exec bash"
+	;;
     help)
         printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail.\nsmb <host ip> - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools."
         ;;
@@ -29,6 +29,9 @@ case $1 in
 	#read -p "[+] Enter the IP to scan: " -r ip
 	gnome-terminal -- bash -c "crackmapexec smb $2; exec bash"
 	gnome-terminal -- bash -c "enum4linux $2; exec bash"
+	;;
+    sqli)
+	gnome-terminal -- bash -c "sqlmap -r $2 --batch; exec bash"
 	;;
     *)
 	echo "Unknown argument(s): $@"

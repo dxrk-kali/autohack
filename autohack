@@ -272,6 +272,14 @@ enum4linuxSMB(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal -- bash -c "./autohackHeader;./enum4linuxSMB; exec bash"
 }
+sqliBurp(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal -- bash -c "./autohackHeader;./sqliBurp; exec bash"
+}
+dirb(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal -- bash -c "./autohackHeader;./dirb; exec bash"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -375,8 +383,8 @@ printf "${YLLW}
 10) Scilla Port Scan (Scilla)            | 22) Value Fuzz (ffuf)               |
 					 | 23) Enumerate SMB host (CME)        |
 					 | 24) Enumerate SMB host (enum4linux) |                
-					 |            MORE SOON!               |                
-					 |                                     |                
+					 | 25) Check for SQLi in req (sqlmap)  |                
+					 | 26) Fuzz for dirs (dirbuster)       |                
 -------------------------------------------------------------------------------
 Type 'back' to go return to the main menu
 Type 'exit' to quit the program 
@@ -490,6 +498,14 @@ then
 elif [ $choice == 24 ]
 then
 	enum4linuxSMB
+
+elif [ $choice == 25 ]
+then
+	sqliBurp
+
+elif [ $choice == 26 ]
+then
+	dirb
 
 elif [ $choice == 'back' ]
 then
