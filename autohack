@@ -285,6 +285,14 @@ nameThatHash(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation/
 	gnome-terminal -- bash -c "./autohackHeader;./nameThatHash; exec bash"
 }
+hashcatFunc(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation/
+	gnome-terminal -- bash -c "./autohackHeader;./hashcat; exec bash"
+}
+JTR(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation/
+	gnome-terminal -- bash -c "./autohackHeader;./johnScript; exec bash"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -313,8 +321,8 @@ autohackHeader
 4)  Launch SET (Social Engineer Toolkit) |                                     | 
 5)  Reverse Shell Generator              |                                     |
 6)  Identify a Hash (NameThatHash)       |                                     |                
-           MORE SOON!                    |            MORE SOON!               |                
-                                         |                                     |                
+7)  Crack a hash (hashcat)               |            MORE SOON!               |                
+8)  Crack a hash (JohnTheRipper)         |                                     |                
 ------------------------------------------------------------------------------- 
 Type 'back' to go return to the main menu 
 Type 'exit' to quit the program  
@@ -351,6 +359,14 @@ read choice
 	elif [ $choice == 6  ]
 	then
 		nameThatHash
+
+	elif [ $choice == 7  ]
+	then
+		hashcatFunc
+	
+	elif [ $choice == 8  ]
+	then
+		JTR
 	
 	elif [ $choice == 'back' ]
 	then
