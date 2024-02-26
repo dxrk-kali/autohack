@@ -33,6 +33,9 @@ case $1 in
     sqli)
 	gnome-terminal -- bash -c "sqlmap -r $2 --batch; exec bash"
 	;;
+    hashID)
+        gnome-terminal -- bash -c "nth -f $2; exec bash"
+	;;
     *)
 	echo "Unknown argument(s): $@"
 	printf "ah help for more info on how to use AutoHack CLI."
