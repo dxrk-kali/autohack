@@ -17,4 +17,3 @@ shtype=`echo .${shell}rc`
 echo PATH=$(pwd):$PATH >> ~/$shtype
 echo "alias ah='autohack'" >> ~/$shtype
 echo "Close this terminal session and open up a new one, make sure to swap to your root user and then you can run autohack by typing ah into the terminal. Enjoy!"
-#exec autohack
