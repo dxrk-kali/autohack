@@ -22,7 +22,12 @@ case $1 in
         gnome-terminal -- bash -c "dirb $2; exec bash"
 	;;
     help)
-        printf "ah <flag> <argument>\nenum <host ip> - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail.\nsmb <host ip> - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools."
+        printf "
+ah ${GREEN}<flag> ${YLLW}<argument>${NC}\n
+${GREEN}enum ${YLLW}<host ip>${NC} - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail.\n
+${GREEN}smb ${YLLW}<host ip>${NC} - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools.\n
+${GREEN}sqli ${YLLW}<http post request file(usually from burp)>${NC} - Takes an HTTP Post Request as input and tests any and all parameters against sqlmap to find any potential injection points.\n
+${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing hash(es) and uses NameThatHash to identify the hash type."
         ;;
     smb)
 	printf "${YLLW}[*] Performing SMB Enumeration utilizing CME and enum4linux ...${NC}\n"
