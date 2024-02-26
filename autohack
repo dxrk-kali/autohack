@@ -281,6 +281,10 @@ dirb(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
 	gnome-terminal -- bash -c "./autohackHeader;./dirb; exec bash"
 }
+nameThatHash(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation/
+	gnome-terminal -- bash -c "./autohackHeader;./nameThatHash; exec bash"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -308,7 +312,7 @@ autohackHeader
 3)  Mass Deuath Attack (MDK3)	         |				       | 
 4)  Launch SET (Social Engineer Toolkit) |                                     | 
 5)  Reverse Shell Generator              |                                     |
-                                         |                                     |                
+6)  Identify a Hash (NameThatHash)       |                                     |                
            MORE SOON!                    |            MORE SOON!               |                
                                          |                                     |                
 ------------------------------------------------------------------------------- 
@@ -343,6 +347,10 @@ read choice
 	elif [ $choice == 5  ]
 	then
 		reverseShellGen
+	
+	elif [ $choice == 6  ]
+	then
+		nameThatHash
 	
 	elif [ $choice == 'back' ]
 	then
