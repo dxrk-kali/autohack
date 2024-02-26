@@ -15,7 +15,7 @@ LR='\033[0;31m'
 patch=5.01
 #END COLORS
 ############################################  CLI CODE SECTION ##########################
-#test
+
 argscanner(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
 	./argScanner $@
