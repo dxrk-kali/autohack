@@ -10,6 +10,7 @@ patch=4.84
 #END COLORS
 #
 #Using dirbuster to enumerate a website for endpoint detection
+#test
 read -p "[+] Provide Website/IP: " -r site
 dirb $site
 
