@@ -7,7 +7,7 @@ YLLW='\033[1;33m'
 DG='\033[0;37m'
 LR='\033[0;31m' 
 # END COLORS
-
+whereah=`which autohack` #Left as a variable to reference when needed (to know where the user has autohack installed)
 case $1 in
     enum)
         printf "${YLLW}[*] Performing Enumeration Scan ...${NC}\n"
@@ -26,8 +26,11 @@ case $1 in
 ah ${GREEN}<flag> ${YLLW}<argument>${NC}\n
 ${GREEN}enum ${YLLW}<host ip>${NC} - Perform basic enumeration of a host using nmap. After an initial and basic port scan, the script will ask you to enter any ports you wish to scan in more detail.\n
 ${GREEN}smb ${YLLW}<host ip>${NC} - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools.\n
-${GREEN}sqli ${YLLW}<http post request file(usually from burp)>${NC} - Takes an HTTP Post Request as input and tests any and all parameters against sqlmap to find any potential injection points.\n
-${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing hash(es) and uses NameThatHash to identify the hash type."
+${GREEN}sqli ${YLLW}<http post request file (usually from burp)>${NC} - Takes an HTTP Post Request as input and tests any and all parameters against sqlmap to find any potential injection points.\n
+${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing hash(es) and uses NameThatHash to identify the hash type.\n
+${GREEN}ferox ${NC}- No arguments needed. Simply run <${GREEN}ah ${YLLW}ffuf${NC}> and it will run a script asking for parameters to perform endpoint detection.\n
+${GREEN}php ${YLLW}<port #> ${NC}- Starts a php server on the provided port in your current working directory to host files.\n"
+
         ;;
     smb)
 	printf "${YLLW}[*] Performing SMB Enumeration utilizing CME and enum4linux ...${NC}\n"
@@ -40,6 +43,12 @@ ${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing 
 	;;
     hashID)
         gnome-terminal -- bash -c "nth -f $2; exec bash"
+	;;
+    ferox)
+	gnome-terminal -- bash -c "cd ${whereah::-8}; cd scripts/scanning_enumeration; ./ferox; exec bash"
+	;;
+    php)
+	gnome-terminal -- bash -c "php -S 0.0.0.0:$2"
 	;;
     *)
 	echo "Unknown argument(s): $@"

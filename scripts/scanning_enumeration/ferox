@@ -10,11 +10,11 @@ patch=4.84
 #END COLORS
 printf 'Enter the URL (with http/https out front) ---> '
 read targip
-printf 'What wordlist would you like to use?
+printf "What wordlist would you like to use?
 1) directory-list-2.3-medium.txt (reccomended)
 2) directory-list-2.3-small.txt
 3) directory-list-lowercase-2.3-medium.txt
-4) directory-list-lowercase-2.3-small.txt'
+4) directory-list-lowercase-2.3-small.txt\n"
 read path
 if [ $path == 1 ]
 then

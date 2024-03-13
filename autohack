@@ -293,6 +293,10 @@ JTR(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/exploitation/
 	gnome-terminal -- bash -c "./autohackHeader;./johnScript; exec bash"
 }
+phpServer(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/
+	gnome-terminal -- bash -c "./autohackHeader; ./phpServer"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -645,7 +649,7 @@ options(){
 2) Update & Upgrade your Kali OS                                               |
 3) Message to users                                                            |                                        
 4) Credits                                                                     |
-									       |
+5) Host a PHP Server						               |
 				           				       |
 -------------------------------------------------------------------------------
 Type 'back' to return to the main menu
@@ -673,7 +677,10 @@ ${NC}"
 	elif [ $choice == 4 ]
 	then
 			credits
-
+	
+	elif [ $choice == 5  ]
+	then
+		phpServer
 	elif [ $choice == 'back' ]
 	then
 		continue
