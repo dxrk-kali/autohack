@@ -1,0 +1,17 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+#This script hosts a basic php web server for the user on a provided port
+printf "${GREEN}"
+read -p 'Enter the absolute path you would like to start the php server from? (ex: /home/joe/postExpFiles): ' cwd
+cd $cwd
+read -p 'Enter what port you would like to run the server off of: ' port
+printf "${NC}"
+gnome-terminal -- bash -c "php -S 0.0.0.0:$port"
