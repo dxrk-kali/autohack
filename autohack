@@ -297,6 +297,10 @@ phpServer(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/
 	gnome-terminal -- bash -c "./autohackHeader; ./phpServer"
 }
+cveScan(){
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/scanning_enumeration/
+	gnome-terminal -- bash -c "./autohackHeader; ./cveScan"
+}
 autohackHeader(){
 	printf "${RED}
  █████╗ ██╗   ██╗████████╗ ██████╗ 	██╗  ██╗ █████╗  ██████╗██╗  ██╗    
@@ -413,7 +417,8 @@ printf "${YLLW}
 					 | 23) Enumerate SMB host (CME)        |
 					 | 24) Enumerate SMB host (enum4linux) |                
 					 | 25) Check for SQLi in req (sqlmap)  |                
-					 | 26) Fuzz for dirs (dirbuster)       |                
+					 | 26) Fuzz for dirs (dirbuster)       |
+				  	 | 27) Perform Vuln Scan (searchsploit)|                
 -------------------------------------------------------------------------------
 Type 'back' to go return to the main menu
 Type 'exit' to quit the program 
@@ -535,6 +540,10 @@ then
 elif [ $choice == 26 ]
 then
 	dirb
+
+elif [ $choice == 27 ]
+then
+	cveScan
 
 elif [ $choice == 'back' ]
 then

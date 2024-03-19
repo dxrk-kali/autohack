@@ -1,0 +1,31 @@
+#!/bin/bash
+#COLORS
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+YLLW='\033[1;33m'
+DG='\033[0;37m'
+LR='\033[0;31m'
+patch=4.84
+#END COLORS
+
+whereah=`which autohack`; cd ${whereah::-8}; cd results
+
+printf "${GREEN}[*] Output will be saved to: ${whereah::-8}results [*]\n\n"
+
+printf "${GREEN}[*] Starting basic nmap scan ... [*]${NC}\n"
+
+nmap -p- $1
+
+printf "${YLLW}[+] Enter port(s) to scan (EX: 80,22,443 OR give a range like 1-10000): \n"
+read ports
+printf "[+] Enter filename to save output to: \n"
+read filename
+printf "${NC}\n\n"
+nmap -sV -sC -oX $filename -p$ports $1 
+
+
+savedPath="${whereah::-8}results/$filename"
+printf "${GREEN}\n\n[*] Saved nmap scan results located at: $savedPath [*]"
+gnome-terminal -- bash -c "${whereah::-8}scripts/scanning_enumeration/autohackHeader; searchsploit --nmap $savedPath; bash" 
+bash

@@ -29,7 +29,8 @@ ${GREEN}smb ${YLLW}<host ip>${NC} - Performs SMB enumeration against a target us
 ${GREEN}sqli ${YLLW}<http post request file (usually from burp)>${NC} - Takes an HTTP Post Request as input and tests any and all parameters against sqlmap to find any potential injection points.\n
 ${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing hash(es) and uses NameThatHash to identify the hash type.\n
 ${GREEN}ferox ${NC}- No arguments needed. Simply run <${GREEN}ah ${YLLW}ffuf${NC}> and it will run a script asking for parameters to perform endpoint detection.\n
-${GREEN}php ${YLLW}<port #> ${NC}- Starts a php server on the provided port in your current working directory to host files.\n"
+${GREEN}php ${YLLW}<port #> ${NC}- Starts a php server on the provided port in your current working directory to host files.\n
+${GREEN}scan ${YLLW}<host ip> ${NC}- Starts with a basic nmap scan of <host ip> which will scan all ports via tcp. Based on that scan, provide port(s) to scan further (either as comma seperated list or as a range (EX: 80,22 or 1-1000). The output will be saved in the /results inside of the autohack repo. That output will be scanned by searchsploit to detected any existing potential exploits against the technologies identified.\n"
 
         ;;
     smb)
@@ -49,6 +50,9 @@ ${GREEN}php ${YLLW}<port #> ${NC}- Starts a php server on the provided port in y
 	;;
     php)
 	gnome-terminal -- bash -c "php -S 0.0.0.0:$2"
+	;;
+    scan)
+	gnome-terminal -- bash -c "/${whereah::-8}scripts/other/cveScanCli $2"
 	;;
     *)
 	echo "Unknown argument(s): $@"
