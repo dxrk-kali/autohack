@@ -591,7 +591,7 @@ Hacking made simple.
 
 '̿'\̵͇\з= ( ▀ ͜͞ʖ▀) =ε/̵͇/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
 	 
-	${NC}"
+${NC}"
 	#OPTIONS END
 	printf "${LR}AutoHack${NC}${YLLW} |${NC}${DG} root💀kali ${YLLW}--> "
 	read choice
