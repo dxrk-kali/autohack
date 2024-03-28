@@ -162,9 +162,8 @@ masscan(){
 	cd ../..
 }
 dependencies_installer(){
-	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other/dependencies
-	./masterInstaller
-	cd ../../..
+	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/other
+	gnome-terminal -- $SHELL -c "./dependencyChecker.sh;./gitInstall.sh; exec bash"	
 }
 scouter(){
 	whereah=`which autohack`; cd ${whereah::-8}; cd scripts/wifi_tools
@@ -807,13 +806,11 @@ ${NC}"
 	then
 		clear
 		options
-		
+
 	elif [ $choice == 6 ] 
 	then
 		clear
 		dependencies_installer
-
-
 	elif [ $choice == 'exit' ]
 	then
 		exit
