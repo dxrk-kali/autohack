@@ -10,3 +10,6 @@
 [submodule "scripts/scanning_enumeration/AutoRecon"]
 	path = scripts/scanning_enumeration/AutoRecon
 	url = https://github.com/Tib3rius/AutoRecon.git
+[submodule "scripts/exploitation/Name-That-Hash"]
+	path = scripts/exploitation/Name-That-Hash
+	url = https://github.com/HashPals/Name-That-Hash
