@@ -9,7 +9,6 @@ crackmapexec
 enum4linux
 sqlmap
 dirbuster
-fuzzywuzzy
 tld
 requests
 aircrack

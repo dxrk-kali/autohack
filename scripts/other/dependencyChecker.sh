@@ -24,6 +24,6 @@ while IFS= read -r package || [ -n "$package" ]; do
     if dpkg -l | grep -qw "$package"; then
         printf "\n${GREEN}[✔] $package is installed. [✔]${NC}\n"
     else
-        printf "${RED}[✘] $package is NOT installed. [✘]${NC}\n"
+        printf "\n${RED}[✘] $package is NOT installed. [✘]${NC}\n"
     fi
 done < "$DEPENDENCIES_FILE"
