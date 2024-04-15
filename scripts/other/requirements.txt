@@ -17,5 +17,4 @@ mdk3
 hashcat
 john
 gnome-terminal
-gccgo-go
 golang-go
