@@ -31,7 +31,7 @@ ${GREEN}enum ${YLLW}<host ip>${NC} - Perform basic enumeration of a host using n
 ${GREEN}smb ${YLLW}<host ip>${NC} - Performs SMB enumeration against a target using CrackMapExec and enum4linux. Two windows will be populated utilizing these tools.\n
 ${GREEN}sqli ${YLLW}<http post request file (usually from burp)>${NC} - Takes an HTTP Post Request as input and tests any and all parameters against sqlmap to find any potential injection points.\n
 ${GREEN}hashID ${YLLW}<file containing hash(es)>${NC} - Takes a file containing hash(es) and uses NameThatHash to identify the hash type.\n
-${GREEN}ferox ${NC}- No arguments needed. Simply run <${GREEN}ah ${YLLW}ffuf${NC}> and it will run a script asking for parameters to perform endpoint detection.\n
+${GREEN}ferox ${NC}- No arguments needed. Simply run <${GREEN}ah ${YLLW}ferox${NC}> and it will run a script asking for parameters to perform endpoint detection.\n
 ${GREEN}php ${YLLW}<port #> ${NC}- Starts a php server on the provided port in your current working directory to host files.\n
 ${GREEN}scan ${YLLW}<host ip> ${NC}- Starts with a basic nmap scan of <host ip> which will scan all ports via tcp. Based on that scan, provide port(s) to scan further (either as comma seperated list or as a range (EX: 80,22 or 1-1000). The output will be saved in the /results inside of the autohack repo. That output will be scanned by searchsploit to detected any existing potential exploits against the technologies identified.\n
 ${GREEN}make ${NC}- No arguments needed. Simply run. This will run a dependencies check to make sure you have all the dependencies required for autohack to fully function. It will check for packages locally installed and make sure all git submodules have been installed properly.\n"
